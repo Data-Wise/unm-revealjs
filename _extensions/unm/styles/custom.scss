@@ -67,7 +67,7 @@ $selection-color: $unm-terra !default;
 $code-bg: rgb(223, 233, 237) !default;
 $code-color: #000000 !default;
 $code-border: 1px solid rgb(73, 71, 71) !default;
-$code-font-size: .8em !default;
+$code-font-size: $font-size-tiny !default;
 $code-line-height: 1.5em !default;
 $code-font-family: "Fira Code", monospace !default;
 $code-font-family-alt1: menlo, monospace !default;
@@ -149,17 +149,34 @@ $code-font-family-alt1: menlo, monospace !default;
   margin-top: 0;
 }
 
+// Adjust the font size of code blocks globally
+.reveal pre code {
+  padding: 1em;
+  /* Adjust padding around code blocks */
+  margin: 0;
+  /* Adjust margin above and below code blocks */
+  font-size: $code-font-size;
+  /* Increase or decrease as needed */
+  line-height: 1.2em;
+  /* Adjust line height for better readability */
+}
+
 // Code Blocks
 .reveal pre {
+  padding: 0;
+  /* Adjust padding around code blocks */
+  margin: 0;
+  /* Adjust margin above and below code blocks */
   font-family: $code-font-family;
-  font-size: $code-font-size;
+  font-size: 1em;
   line-height: $code-line-height;
   background-color: $code-bg;
 }
 
-.reveal code {
-  font-family: $code-font-family;
-}
+// .reveal code {
+//   font-family: $code-font-family;
+//   font-size: $code-font-size;
+// }
 
 // Alerts
 .alert {
@@ -320,9 +337,19 @@ td {
 
 // Code Slide Styles
 .code-slide {
+  // background-color: $bg-color;
+  margin: 0;
+  padding: 0;
   background-color: $bg-color;
-  color: $unm-cherry;
-  font-size: $font-size-small;
+  font-size: $code-font-size;
+  line-height: $code-line-height;
+
+  h2 {
+    font-size: $presentation-h2-font-size;
+    background-color: $bg-color;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
 // Smaller Slide Styles

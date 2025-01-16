@@ -29,20 +29,32 @@ can be used with this theme, even if we don't highlight them here.
 
 ## Additional theme classes
 
-### Some extra things you can do with the clean theme
-
-Special classes for emphasis
+### Special classes for emphasis
 
 - `.alert` class for default emphasis, e.g. [important note]{.alert}.
 - `.fg` class for custom colour, e.g. [important note]{.fg style="--col: #e64173"}.
 - `.bg` class for custom background, e.g. [important note]{.bg style="--col: #e64173"}.
 
-Cross-references
+### Cross-references
 
 - `.button` class provides a Beamer-like button, e.g.
 [[Summary]{.button}](#sec-summary)
 
-## Want more?
+
+## Code blocks {.code-slide}
+
+### R code
+
+```{r}
+#| echo: true
+# This is an R code block
+x <- rnorm(100)
+y <- 2*x + rnorm(100)
+summary(lm(y ~ x))
+```
+
+
+<!-- ## Want more?
 
 ### See our longer demo slides
 
@@ -54,9 +66,10 @@ We provide a separate
 with more examples for integrating code, tables, figures, etc.
 
   - See the live demo slides
-  [here](https://grantmcdermott.com/quarto-revealjs-clean-demo/template.html).
+  [here](https://grantmcdermott.com/quarto-revealjs-clean-demo/template.html). -->
 
-## Summary {#sec-summary}
+
+<!-- ## Summary {#sec-summary}
 
 ### A minimalist and elegant presentation theme
 
@@ -79,4 +92,4 @@ quarto use template grantmcdermott/quarto-revealjs-clean
 
 ```{.bash}
 quarto use template grantmcdermott/quarto-revealjs-clean-demo
-```
+``` -->
