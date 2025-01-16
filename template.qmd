@@ -13,11 +13,11 @@ author:
 date: last-modified
 ---
 
-# Introduction {.section-slide-text}
+# Introduction (Section with Text)  {.section-slide-text}
 
 Welcome to the presentation on advancements in renewable energy.
 
-# Agenda {.section-slide-text}
+# Agenda (Section with Text) {.section-slide-text}
 
 1. Introduction
 2. Current Technologies
@@ -25,7 +25,7 @@ Welcome to the presentation on advancements in renewable energy.
 4. Case Studies
 5. Conclusion
 
-# Current Technologies
+# Current Technologies (Section without Text)
 
 ## Solar Power
 
@@ -53,10 +53,19 @@ Exploring emerging technologies and innovations in renewable energy.
 - Wind energy research initiatives
 
 
-# Conclusion {.section-slide-text}
+## Conclusion {.section-slide-text}
 
 - Renewable energy is pivotal for sustainable development.
 - Continued research and investment are essential.
+
+
+## Example Code Block
+
+```{r}
+#| echo: true
+x <- rnorm(10)
+print(x)
+```
 
 # Thank You!
 
