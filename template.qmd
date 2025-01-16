@@ -1,0 +1,242 @@
+---
+title: This is a title
+subtitle: This is a subtitle
+format: 
+  unm-revealjs:
+    default
+# html-math-method:
+#   method: mathjax
+#   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: Your Name
+    orcid: 0000-0000-0000-0000
+    email: user-id@unm.edu
+    affiliations: The University of New Mexico
+# date: last-modified
+---
+
+# Introduction to Experimental Design
+
+## Overview
+
+**Definition:**
+Experimental design is the framework for planning experiments to investigate how controllable inputs (factors) influence outcomes (responses).
+
+**Example:**
+Testing different fertilizers to determine their effect on plant growth.
+
+**Key Points:**
+
+- Active manipulation of factors
+- Control of unwanted variability
+- Valid causal inferences
+
+## Learning Objectives {.smaller-slide}
+
+- **Identify and classify sources of variation** in an experiment.
+- **Define treatment factors, factor levels, and experimental units.**
+- **Explore blocking, nuisance factors, and strategies to manage them.**
+- **Understand the principles of randomization** and its role in statistical inference.
+- **Examine standard experimental designs** (CRD, RBD, Factorial, Latin Square, Split-Plot) and their appropriate applications.
+- **Distinguish between fixed and random effects** in modeling.
+- **Plan data collection, run pilot experiments, and determine sample sizes.**
+- **Gain hands-on experience using R** for randomization, exploratory data analysis, and basic ANOVA.
+
+# Advanced Teaching Strategies
+
+## Flipped Classroom Approach
+
+**Pre-Class Materials:**
+
+- Video on the basics of experimental design.
+- Reading: Chapter 3 from Dean (2017).
+
+**In-Class Activities:**
+
+- Group discussions on pre-class materials.
+- Hands-on exercises using R for randomization and ANOVA.
+
+## Problem-Based Learning (PBL)
+
+**Scenario:**
+A pharmaceutical company wants to determine the most effective dosage of a new drug. Students will design an experiment to test different dosage levels while controlling for patient variability.
+
+**Task:**
+
+- Define objectives.
+- Identify sources of variation.
+- Choose an appropriate experimental design.
+
+## Case-Based Learning
+**Task:**
+Analyze actual clinical trial data to interpret treatment effects and variability.
+
+**Focus:**
+Understanding results in real-world contexts rather than solely on calculations.
+
+# Steps in Planning an Experiment
+
+## Define the Objectives of the Experiment
+
+- **Clearly state the goals:** (e.g., comparing treatments, optimizing factors, studying interactions).
+- **Specificity:** Formulate objectives as clear questions or hypotheses to guide the design.
+
+**Example Objectives:**
+
+- Compare the effectiveness of three fertilizers on plant growth.
+- Optimize temperature and humidity settings for maximum yeast fermentation.
+
+## Identify All Sources of Variation {.smaller}
+
+1. **Treatment Factors and Their Levels**
+   - **Definition:** Variables actively manipulated (e.g., temperature, dosage) with specific settings.
+   - **Example:** Dosage levels: 10 mg, 20 mg, 30 mg.
+
+2. **Experimental Units**
+   - **Definition:** The smallest division of material receiving a treatment independently.
+   - **Example:** Individual plants in a field trial.
+
+3. **Blocking Factors, Noise Factors, and Covariates**
+   - **Blocking:** Group similar units (e.g., day of testing) to control variability.
+   - **Noise Factors:** Uncontrollable variability (e.g., weather conditions).
+   - **Covariates:** Measurable properties (e.g., baseline performance) that can explain variation when included in the model.
+
+## Choose a Rule for Assigning Experimental Units to Treatments
+
+- **Select randomization techniques:**
+  - **Completely Randomized Design (CRD)**
+  - **Randomized Block Design (RBD)**
+  - **Split-Plot Design**
+
+## Specify the Measurements- Smaller Slide {.smaller-slide}
+
+1. Measurements
+   - **Precision:** Define the accuracy and units of measurement.
+   - **Frequency:** Determine how often measurements are taken.
+   - **Example:** Growth in cm, tensile strength in MPa.
+
+2. Procedure
+   - **Consistency:** Develop step-by-step instructions for data collection.
+   - **Training:** Ensure all personnel are adequately trained to minimize errors.
+
+3. Anticipated Difficulties
+   - **Challenges:** Identify potential issues (e.g., equipment failure).
+   - **Mitigation:** Develop strategies to address these challenges.
+
+## Specify the Measurements- Small Slide {.small-slide}
+
+1. Measurements
+   - **Precision:** Define the accuracy and units of measurement.
+   - **Frequency:** Determine how often measurements are taken.
+   - **Example:** Growth in cm, tensile strength in MPa.
+
+2. Procedure
+   - **Consistency:** Develop step-by-step instructions for data collection.
+   - **Training:** Ensure all personnel are adequately trained to minimize errors.
+
+3. Anticipated Difficulties
+   - **Challenges:** Identify potential issues (e.g., equipment failure).
+   - **Mitigation:** Develop strategies to address these challenges.
+
+
+## Run a Pilot Experiment
+
+- Test feasibility
+- Validate instruments
+- Refine factor levels or treatment combinations
+
+## Specify the Statistical Model
+
+**Example for One-Way ANOVA:**
+$$
+Y_{ij} = \mu + \tau_i + \varepsilon_{ij}
+$$
+
+where:
+
+- $i$: Treatment index.
+- $j$: Replication index.
+- $Y_{ij}$: Observed response.
+- $\mu$: Overall mean.
+- $\tau_i$: Treatment effect.
+- $\varepsilon_{ij}$: Random error term.
+
+## Outline the Analysis
+
+- **Plan descriptive and inferential methods:** (e.g., ANOVA, regression).
+- **Include diagnostic checks:** Validate model assumptions (e.g., normality, homoscedasticity).
+
+## Calculate Sample Size
+
+- **Perform power analysis:** Based on variability estimates and desired precision.
+
+## Review and Revise
+
+- **Revisit and refine decisions:** Based on pilot results and practical constraints.
+
+
+
+## R Example: Simple Random Assignment
+
+```{r}
+#| label: random-assignment-simple
+#| echo: true
+
+set.seed(123)
+treatments <- rep(c("A", "B", "C"), each = 4)
+assignments <- sample(treatments)
+assignments
+```
+
+
+## Sample Table
+
+| Treatment | Replicate | Response |
+|-----------|-----------|----------|
+| A         | 1         | 12.3     |
+| A         | 2         | 11.8     |
+| A         | 3         | 12.1     |
+| A         | 4         | 12.5     |
+| B         | 1         | 13.2     |
+| B         | 2         | 13.5     |
+
+
+
+## Flowchart of Experimental Design Steps {.image-slide}
+
+```{mermaid}
+%%| label: fig-doe-plan-flowchart
+%%| fig-cap: "Experimental Design Planning Flowchart"
+%%| echo: false%%| 
+
+graph TD
+    A[Define Objectives] --> B[Identify Sources of Variation]
+    B --> C[Choose Assignment Rules]
+    C --> D[Specify Measurements & Procedure]
+    D --> E[Identify Anticipated Difficulties]
+    E --> F[Run Pilot Experiment]
+    F --> G[Specify Statistical Model]
+    G --> H[Outline Analysis]
+    H --> I[Calculate Sample Size]
+    I --> J[Review and Revise]
+    J --> A
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style J fill:#f96,stroke:#333,stroke-width:2px
+```
+
+# Section 1 {.section-slide}
+
+
+## Regular Slide {.regular-slide}
+
+Here is some regular content.
+
+- Point 1
+- Point 2
+- Point 3
+
+### Heading 3
+
+## Quote Slide {.quote-slide}
+
+> "This is a customized quote slide."

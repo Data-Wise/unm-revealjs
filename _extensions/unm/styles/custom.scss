@@ -1,0 +1,399 @@
+// ====================
+// 1. Variables
+// ====================
+
+// Define UNM Colors
+$unm-cherry: #ba0c2f;
+$unm-turquoise: #007a86;
+$unm-silver: #a7a8aa;
+$unm-lobo-gray: #63666a;
+$unm-high-noon: #ffc600;
+$unm-sandia-sunset: #ed8b00;
+$unm-terra: #c05131;
+$unm-mesa: #d6a461;
+$unm-green-chile: #a8aa19;
+$unm-deep-dusk: #8a387c;
+
+// Custom Colors and Variables
+$accent: $unm-deep-dusk;
+$accent1: $unm-turquoise;
+$accent2: $unm-deep-dusk;
+$accent3: $unm-terra;
+$body-text-color: #000000;
+$bg-color: #ffffff;
+
+// Font Variables
+$font-family-sans-serif: "Roboto", sans-serif !default;
+$font-family-monospace: "Fira Code", monospace !default;
+$presentation-font-size-root: 37px;
+$presentation-font-smaller: 0.7em;
+$presentation-line-height: 1.3em;
+
+// Heading Font Variables
+
+$presentation-h1-font-size: 2.5em;
+$presentation-h2-font-size: 2em;
+$presentation-h3-font-size: 1.5em;
+$presentation-h4-font-size: 1.2em;
+$presentation-heading-color: $unm-cherry;
+$presentation-heading-line-height: 1.2em;
+$presentation-heading-font-weight: bold;
+
+
+// User Font Variables
+$presentation-heading-font: "Roboto", sans-serif !default;
+$presentation-font: "Roboto", sans-serif !default;
+$presentation-font-chalk: "Chalkboard", sans-serif !default;
+$presentation-font-alt1: "Georgia", serif !default;
+$presentation-font-alt2: "Arial", sans-serif !default;
+
+// User Defined Font Sizes
+$font-size-root: 37px;
+$font-size-large: 48px;
+$font-size: 30px;
+$font-size-medium: 40px;
+$font-size-medium-small: 30px;
+$font-size-small: 26px;
+$font-size-tiny: 21px;
+
+// Line Heights
+$line-height-large: 2em;
+$line-height: 1.5em;
+
+// Link and Selection Colors
+$link-color: $accent !default;
+$selection-bg: #26351c !default;
+$selection-color: $unm-terra !default;
+$code-bg: rgb(223, 233, 237) !default;
+$code-color: #000000 !default;
+$code-border: 1px solid rgb(73, 71, 71) !default;
+$code-font-size: .8em !default;
+$code-line-height: 1.5em !default;
+$code-font-family: "Fira Code", monospace !default;
+$code-font-family-alt1: menlo, monospace !default;
+
+/*-- scss:defaults --*/
+
+// ====================
+// 2. Imports
+// ====================
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,350,350i,400,400i&display=swap');
+
+/*-- scss:rules --*/
+
+// ====================
+// 3. Base Styles
+// ====================
+
+.reveal {
+  font-family: $font-family-sans-serif;
+  font-size: $font-size;
+  color: $body-text-color;
+  background-color: $bg-color;
+  line-height: $line-height;
+  margin-top: 0%;
+  margin-bottom: 2rem;
+}
+
+.reveal a {
+  color: $link-color;
+  line-height: $line-height;
+}
+
+.reveal p {
+  font-size: $font-size;
+  font-weight: normal;
+  margin: 1rem 0;
+}
+
+.reveal img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+// ====================
+// 4. Component Styles
+// ====================
+
+// Headers
+.reveal h1 {
+  color: $unm-cherry;
+  font-weight: bold;
+  font-size: $presentation-h1-font-size;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.reveal h2 {
+  font-weight: bolder;
+  font-size: $presentation-h2-font-size;
+  margin: 1.9rem 0 4rem 0;
+  color: $unm-cherry;
+  text-align: center;
+}
+
+.reveal h3 {
+  font-weight: normal;
+  font-size: $presentation-h3-font-size;
+  margin: 1.5rem 0 2.5rem 0;
+  padding-left: 1em;
+  color: $unm-terra;
+}
+
+.reveal h4 {
+  color: $accent2;
+  font-weight: normal;
+  margin-top: 0;
+}
+
+// Code Blocks
+.reveal pre {
+  font-family: $code-font-family;
+  font-size: $code-font-size;
+  line-height: $code-line-height;
+  background-color: $code-bg;
+}
+
+.reveal code {
+  font-family: $code-font-family;
+}
+
+// Alerts
+.alert {
+  color: var(--col, $unm-cherry);
+}
+
+.fg {
+  color: $unm-sandia-sunset;
+}
+
+.bg {
+  background-color: var(--col, $bg-color);
+  padding: 0;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+// Beamer-style button link environment
+
+.button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: $font-size-small;
+  font-weight: 400;
+  line-height: $line-height;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: $accent;
+  border: 1px solid $accent;
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.button::before {
+  content: "▶";
+  margin-right: 5px;
+}
+
+// Lists
+ul,
+ol {
+  padding-left: 0.5em;
+  margin-bottom: 1em;
+  color: $body-text-color;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+  font-size: 1.2em;
+}
+
+li {
+  list-style-type: square;
+  margin-bottom: 1em;
+  font-size: 1em;
+}
+
+// Tables
+table {
+  border-collapse: collapse;
+  width: 90%;
+  margin-bottom: 1em;
+  border-spacing: 0;
+
+  tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+th {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: $body-text-color;
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+td {
+  padding: 0.5em;
+  text-align: left;
+  /* Adjust text alignment as needed */
+  font-weight: lighter;
+  /* Lighter font weight for main table text */
+}
+
+// ====================
+// 5. Slide Type Styles
+// ====================
+
+// Title Slide Styles
+.title-slide {
+  text-align: center;
+  margin: 1em 0;
+  padding-bottom: 5%;
+
+  .title {
+    color: $unm-cherry;
+    font-family: $presentation-heading-font;
+    font-size: 2em;
+    font-weight: bolder;
+    margin: 1em 0 0.5em 0;
+  }
+
+  .subtitle {
+    color: $unm-cherry;
+    font-size: 1.4em;
+    font-style: italic;
+    font-weight: bolder;
+    margin: 0;
+  }
+
+  .institute,
+  .quarto-title-affiliation,
+  .quarto-title-author-email {
+    font-style: normal;
+    font-size: $font-size-tiny;
+    color: $accent;
+  }
+
+  .author,
+  .quarto-title-author-name {
+    font-size: $font-size-small;
+    color: $accent;
+  }
+
+  .quarto-title-authors {
+    display: flex;
+    justify-content: center;
+
+    .quarto-title-author {
+      padding: 0 1em;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+// Section Slide Styles
+.section-slide {
+  background-color: $bg-color;
+  text-align: left;
+  font-size: $font-size-large;
+  // border-bottom: 5px solid #1abc9c;
+}
+
+// Code Slide Styles
+.code-slide {
+  background-color: $bg-color;
+  color: $unm-cherry;
+  font-size: $font-size-small;
+}
+
+// Smaller Slide Styles
+.smaller-slide {
+  font-size: $font-size-small;
+  line-height: $line-height;
+
+  h2 {
+    font-size: 1.9em;
+    font-weight: bolder;
+    margin: 1rem 0 2.5rem 0;
+  }
+}
+
+// Small Slide Styles
+.small-slide {
+  background-color: $bg-color;
+  font-size: $font-size-tiny;
+  line-height: $line-height;
+}
+
+// Quote Slide Styles
+.quote-slide {
+  color: $unm-cherry;
+  font-size: $font-size-small;
+  text-align: center;
+
+  blockquote {
+    font-style: italic;
+    color: $unm-lobo-gray;
+    border-left: 5px solid $unm-green-chile;
+    padding-left: 20px;
+  }
+}
+
+// Image Slide Styles
+.image-slide {
+  margin: 0;
+  padding: 0;
+  background-color: $bg-color;
+  font-size: $font-size-tiny;
+
+  h2 {
+    font-size: 1em;
+    color: $accent;
+    background-color: $bg-color;
+  }
+}
+
+// ====================
+// 6. Footer Styles
+// ====================
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  color: #333333;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+// Prevent slide content from overlapping the footer
+.reveal .slides section {
+  padding-bottom: 50px;
+  /* Adjust based on footer height */
+}
+
+/*-- scss:mixins --*/

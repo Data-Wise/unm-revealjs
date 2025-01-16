@@ -1,0 +1,21 @@
+title: unm
+author: Davood Tofighi
+version: 1.0.0
+quarto-required: ">=1.6.0"
+contributes:
+  formats:
+    revealjs:
+      theme:
+        - simple
+        - "styles/custom.scss"
+    scrollable: true
+    menu:
+      side: left
+    date-format: long
+    # include-after-body:
+    #   - '<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>'
+    includes:
+      after-body: footer.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
