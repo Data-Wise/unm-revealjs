@@ -2,3 +2,5 @@
 *_files/
 .DS_Store
 _quarto_internal_scss_error.scss
+.gitattributes
+/example_*/
