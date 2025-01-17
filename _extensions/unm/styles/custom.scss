@@ -12,42 +12,74 @@ $unm-deep-dusk: #8a387c; // used for $accent, $accent2
 
 // --- Accent Colors ---
 $accent: $unm-deep-dusk; // used for links, buttons
-$accent2: $unm-deep-dusk; // used in h4
+$accent2: $unm-green-chile; // used in h4
+
 
 // --- Basic Colors & Text ---
-$body-text-color: #000000;
-$bg-color: #ffffff;
+$body-bg: #ffffff; // sass variable for body background
+$body-color: #222; // sass variable for body text color
+$link-color: #2a76dd; // sass variable for link color
+$link-color-hover: lighten($link-color, 15%); // sass variable for link hover color
+$selection-bg: lighten($unm-sandia-sunset, 30%); // sass variable for selection background color
+$selection-color: lighten($unm-lobo-gray, 25%)g; // sass variable for selection text color
+$light-bg-code-color: #4758ab; // sass variable for light background code color
 
 // --- Font Families ---
-$font-family-sans-serif: "Roboto", sans-serif !default;
-$font-family-monospace: "Fira Code", monospace !default;
+$font-family-sans-serif: "Roboto", sans-serif !default; // sass variable for sans-serif font
+$font-family-monospace: "Fira Code", monospace !default; // sass variable for monospace font
 
-// --- Quarto-Recommended Base Font Sizes ---
-$font-size: 26px; // Base font size
-$font-size-medium-small: 24px;
-$font-size-small: 22px;
-$font-size-tiny: 20px;
+// User defined font families
+
+$font-family-heading-alt1: "Lato", sans-serif; // my custom font family for headings
+$font-family-heading-alt2: "Fira Sans", sans-serif; // my custom font family for headings
+
+
+// --- Quarto-Recommended Base Font Sizes User Defined---
+$font-size-large: 2.5em !default; // Base font size
+$font-size: 1em !default; // Base font size
+$font-size-medium-small: .8em !default;
+$font-size-small: 0.6em !default;
+$font-size-tiny: 0.4em !default;
 
 // --- Line Height ---
 $line-height: 1.3em;
 
 // --- Heading Font Sizes ---
-$presentation-font-size-root: 35px;
-$presentation-h1-font-size: 1.8em;
-$presentation-h2-font-size: 1.5em; // Reduced from 2em
-$presentation-h3-font-size: 1.2em;
+$presentation-font-size-root: 29px; // Base font size for headings
+$presentation-h1-font-size: 2.5em !default;
+$presentation-h2-font-size: 1.8em !default;
+$presentation-h3-font-size: 1.2em !default;
+$presentation-heading-font: $font-family-sans-serif;
+$presentation-heading-color: $unm-cherry;
+$presentation-heading-line-height: 1.2em;
+$presentation-font-smaller: 0.8em; // Sass variable for smaller font size
+$presentation-line-height: 1.2em; // Sass variable for line height
 
 // --- Code Block Settings ---
-$code-bg: rgb(223, 233, 237) !default;
-$code-font-size: 30px !default; // Increased from 20px
 $code-line-height: 1.2em !default;
 $code-font-family: "Fira Code", monospace !default;
+$code-block-font-size: .5em !default; //sass variable for code block font size
+$code-block-bg: rgb(223, 233, 237) !default; //Sass variable for code block background
 
 // ====================
 // 2. Imports
 // ====================
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,350,350i,400,400i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,350,350i,400,400i&display=swap'); // Import Roboto font
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap'); // Import 'Fira Code' font
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap'); // Import 'Roboto Slab' font
+
+/* import Lato font */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap'); // Import Lato font
+/* import Open Sans font */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap'); // Import Open Sans font
+/* import Tangerine font */
+@import url('https://fonts.googleapis.com/css?family=Tangerine&display=swap'); // Import Tangerine font
+/* import Fira Sans font */
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap'); // Import Fira Sans font
+
+
+
 
 // ====================
 // 3. Base Styles
@@ -55,12 +87,12 @@ $code-font-family: "Fira Code", monospace !default;
 
 .reveal {
   font-family: $font-family-sans-serif;
-  font-size: $font-size;
-  color: $body-text-color;
-  background-color: $bg-color;
+  // font-size: $font-size;
+  color: $body-color;
+  background-color: $body-bg;
   line-height: $line-height;
   margin-top: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 1em;
 }
 
 .reveal a {
@@ -74,30 +106,69 @@ $code-font-family: "Fira Code", monospace !default;
   border-radius: 8px;
 }
 
+
+#title-slide {
+
+  .title,
+  .subtitle {
+    opacity: 0.80;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    color: $unm-cherry !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; //"Tangerine";
+    // text-shadow: 2px 2px 2px #b22222;
+  }
+
+  .title {
+    font-size: $font-size-large;
+  }
+
+  .subtitle {
+    font-size: $presentation-h2-font-size;
+  }
+
+  .institute,
+  .quarto-title-author,
+  .date {
+    // opacity: 0.50;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 1em;
+    // color: #EEB422 !important;
+  }
+
+}
+
+
 // ====================
 // 4. Component Styles
 // ====================
 
 // Headings
 .reveal h1 {
-  color: $unm-cherry !important;
-  font-weight: bold;
+  color: $unm-terra;
+  font-weight: bolder;
   font-size: $presentation-h1-font-size;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
+  padding-top: 10%;
+  padding-bottom: 8rem;
 }
 
 .reveal h2 {
   color: $unm-cherry !important; // Ensure color displays properly
   font-weight: bolder;
   font-size: $presentation-h2-font-size;
-  margin: 1rem 0 1rem 0;
+  margin: rem 0 1em 0;
   text-align: center;
-  padding-top: 1rem;
-  padding-bottom: 1.5rem;
+  padding-top: .8em;
+  padding-bottom: .8em;
 }
 
 .reveal h3 {
@@ -126,9 +197,9 @@ $code-font-family: "Fira Code", monospace !default;
   padding: 0;
   margin: 0;
   font-family: $code-font-family;
-  font-size: $code-font-size;
+  font-size: $code-block-font-size;
   line-height: $code-line-height;
-  background-color: $code-bg;
+  background-color: $code-block-bg;
 }
 
 // Alerts
@@ -141,7 +212,7 @@ $code-font-family: "Fira Code", monospace !default;
 }
 
 .bg {
-  background-color: var(--col, $bg-color);
+  background-color: var(--col, $body-bg);
   padding: 0;
   border-radius: 5px;
   display: inline-block;
@@ -182,8 +253,8 @@ li,
 ul,
 ol {
   padding-left: 0.5em;
-  margin-bottom: 1em;
-  color: $body-text-color;
+  // margin-bottom: 1em;
+  // color: $body-color;
 }
 
 ul {
@@ -212,7 +283,7 @@ table {
 
 th {
   background-color: rgba(0, 0, 0, 0.1);
-  color: $body-text-color;
+  color: $body-color;
   font-weight: bold;
   padding: 0.5em;
 }
@@ -227,71 +298,73 @@ td {
 // 5. Slide Type Styles
 // ====================
 
-// Title Slide
-.title-slide {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  min-height: 100vh;
-  text-align: center;
-  margin: 2em 0;
-  padding-bottom: 5%;
+// // Title Slide
+// .title-slide {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: left;
+//   min-height: 100vh;
+//   text-align: center;
+//   margin: 2em 0;
+//   padding-bottom: 2%;
 
-  .title {
-    color: $unm-cherry;
-    font-size: 2em;
-    font-weight: bolder;
-    margin: 2em 0 0.5em 0;
-  }
+//   .title {
+//     color: $unm-cherry;
+//     font-size: 2em;
+//     font-weight: bolder;
+//     margin: 2em 0 2em 0;
+//     padding-top: 20%;
+//     padding-bottom: 5rem;
+//   }
 
-  .subtitle {
-    color: $unm-cherry;
-    font-size: 1.4em;
-    font-style: italic;
-    font-weight: bolder;
-    margin: 0 0 1em 0;
-  }
+//   .subtitle {
+//     color: $unm-cherry;
+//     font-size: 1.5em;
+//     font-style: italic;
+//     font-weight: bolder;
+//     margin: 0 0 1em 0;
+//   }
 
-  .institute,
-  .quarto-title-affiliation,
-  .quarto-title-author-email {
-    font-style: normal;
-    font-size: $font-size-tiny;
-    color: $accent;
-  }
+//   .institute,
+//   .quarto-title-affiliation,
+//   .quarto-title-author-email {
+//     font-style: normal;
+//     font-size: $font-size-small;
+//     color: $accent;
+//   }
 
-  .author,
-  .quarto-title-author-name {
-    font-size: $font-size-small;
-    color: $accent;
-  }
+//   .author,
+//   .quarto-title-author-name {
+//     font-size: $font-size-small;
+//     color: $accent;
+//   }
 
-  .quarto-title-authors {
-    display: flex;
-    justify-content: center;
-    margin-top: 1em;
+//   .quarto-title-authors {
+//     display: flex;
+//     justify-content: center;
+//     margin-top: 1em;
 
-    .quarto-title-author {
-      padding: 0 1em;
-      width: 100%;
-      justify-content: center;
-    }
-  }
-}
+//     .quarto-title-author {
+//       padding: 0 1em;
+//       width: 100%;
+//       justify-content: center;
+//     }
+//   }
+// }
 
 // Code Slide
 .code-slide {
   margin: 0;
   padding: 0;
-  background-color: $bg-color;
-  font-size: $code-font-size;
+  background-color: $body-bg;
+  font-size: $code-block-font-size;
   line-height: $code-line-height;
 
   h2 {
     font-size: $presentation-h2-font-size;
     color: $unm-cherry !important;
-    background-color: $bg-color;
+    background-color: $body-bg;
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -299,7 +372,7 @@ td {
 
 // Smaller Slide
 .small-slide {
-  font-size: $font-size-medium-small;
+  font-size: $presentation-font-smaller;
 
   h2 {
     font-size: 1.75em;
@@ -310,7 +383,7 @@ td {
 
 // Tiny Slide
 .tiny-slide {
-  background-color: $bg-color;
+  background-color: $body-bg;
   font-size: $font-size-small;
 }
 
@@ -332,13 +405,13 @@ td {
 .image-slide {
   margin: 0;
   padding: 0;
-  background-color: $bg-color;
+  background-color: $body-bg;
   font-size: $font-size-tiny;
 
   h2 {
     font-size: 1em;
     color: $accent;
-    background-color: $bg-color;
+    background-color: $body-bg;
   }
 }
 
