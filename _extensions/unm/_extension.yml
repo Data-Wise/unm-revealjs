@@ -5,10 +5,19 @@ quarto-required: ">=1.6.0"
 contributes:
   formats:
     revealjs:
+      logo: "images/unm-logo.png"
+      title-slide-attributes:
+        data-background-image: "images/unm-title-slide.png"
+        data-background-size: "contain"
+        data-background-position: bottom
+        data-background-opacity: "0.3"
+        data-background-repeat: "no-repeat"
+      slide-number: true
+      show-slide-number: all
+      scrollable: true
       theme:
-        - simple
-        - "styles/custom.scss"
-    logo: "images/logo.png"
+      - simple
+      - "styles/custom.scss"
     date-format: long
     includes:
       after-body: footer.html

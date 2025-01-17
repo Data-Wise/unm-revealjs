@@ -27,22 +27,22 @@ $font-family-sans-serif: "Roboto", sans-serif !default;
 $font-family-monospace: "Fira Code", monospace !default;
 $presentation-font-size-root: 37px;
 $presentation-font-smaller: 0.7em;
-$presentation-line-height: 1.3em;
+$presentation-line-height: 1.2em;
 
 // Heading Font Variables
 
 $presentation-h1-font-size: 2.5em;
 $presentation-h2-font-size: 2em;
-$presentation-h3-font-size: 1.3em;
-$presentation-h4-font-size: 1.1em;
+$presentation-h3-font-size: 1.5em;
+$presentation-h4-font-size: 1.2em;
 $presentation-heading-color: $unm-cherry;
 $presentation-heading-line-height: 1.2em;
 $presentation-heading-font-weight: bold;
 
 
 // User Font Variables
-$presentation-heading-font: "Roboto", sans-serif !default;
-$presentation-font: "Roboto", sans-serif !default;
+// $presentation-heading-font: "Roboto", sans-serif !default;
+// $presentation-font: "Roboto", sans-serif !default;
 $presentation-font-chalk: "Chalkboard", sans-serif !default;
 $presentation-font-alt1: "Georgia", serif !default;
 $presentation-font-alt2: "Arial", sans-serif !default;
@@ -52,9 +52,9 @@ $font-size-root: 37px;
 $font-size-large: 48px;
 $font-size: 30px;
 $font-size-medium: 40px;
-$font-size-medium-small: 30px;
-$font-size-small: 26px;
-$font-size-tiny: 21px;
+$font-size-medium-small: 27px;
+$font-size-small: 24px;
+$font-size-tiny: 20px;
 
 // Line Heights
 $line-height-large: 2em;
@@ -67,8 +67,8 @@ $selection-color: $unm-terra !default;
 $code-bg: rgb(223, 233, 237) !default;
 $code-color: #000000 !default;
 $code-border: 1px solid rgb(73, 71, 71) !default;
-$code-font-size: $font-size-tiny !default;
-$code-line-height: 1.5em !default;
+$code-font-size: 22px !default;
+$code-line-height: 1.2em !default;
 $code-font-family: "Fira Code", monospace !default;
 $code-font-family-alt1: menlo, monospace !default;
 
@@ -102,11 +102,6 @@ $code-font-family-alt1: menlo, monospace !default;
   line-height: $line-height;
 }
 
-.reveal a:hover {
-  text-decoration: underline;
-  color: $unm-green-chile;
-}
-
 .reveal img {
   max-width: 100%;
   height: auto;
@@ -136,8 +131,8 @@ $code-font-family-alt1: menlo, monospace !default;
 
 .reveal h3 {
   font-weight: normal;
-  font-size: $presentation-h4-font-size;
-  margin: 1.5rem 0 2rem 0;
+  font-size: $presentation-h3-font-size;
+  margin: 1.5rem 0 2.5rem 0;
   padding-left: 1em;
   color: $unm-terra;
 }
@@ -150,13 +145,13 @@ $code-font-family-alt1: menlo, monospace !default;
 
 // Adjust the font size of code blocks globally
 .reveal pre code {
-  padding: 1.5em;
+  padding: 1em;
   /* Adjust padding around code blocks */
   margin: 0;
   /* Adjust margin above and below code blocks */
-  font-size: 1.4em;
+  font-size: $font-size-small;
   /* Increase or decrease as needed */
-  line-height: 1.2em;
+  line-height: 1.3em;
   /* Adjust line height for better readability */
 }
 
@@ -167,10 +162,15 @@ $code-font-family-alt1: menlo, monospace !default;
   margin: 0;
   /* Adjust margin above and below code blocks */
   font-family: $code-font-family;
-  font-size: .5em;
-  // line-height: 1em;
+  font-size: $font-size-tiny;
+  line-height: $code-line-height;
   background-color: $code-bg;
 }
+
+// .reveal code {
+//   font-family: $code-font-family;
+//   font-size: $code-font-size;
+// }
 
 // Alerts
 .alert {
@@ -221,8 +221,7 @@ $code-font-family-alt1: menlo, monospace !default;
 
 // Lists
 ul,
-ol,
-li {
+ol {
   padding-left: 0.5em;
   margin-bottom: 1em;
   color: $body-text-color;
@@ -234,10 +233,13 @@ ul {
 
 ol {
   list-style-type: decimal;
+  font-size: 1.2em;
 }
 
 li {
   list-style-type: square;
+  margin-bottom: 1em;
+  font-size: 1em;
 }
 
 // Tables
@@ -273,8 +275,14 @@ td {
 
 // Title Slide Styles
 .title-slide {
+  display: flex;
+  flex-direction: column; // stack title, subtitle, author vertically
+  justify-content: center; // center vertically
+  align-items: left; // center horizontally
+  min-height: 100vh; // take the full viewport height
+
   text-align: center;
-  margin: 1em 0;
+  margin: 2em 0;
   padding-bottom: 5%;
 
   .title {
@@ -283,6 +291,8 @@ td {
     font-size: 2em;
     font-weight: bolder;
     margin: 1em 0 0.5em 0;
+    margin-top: 2em; // remove extra top margin
+    margin-bottom: 0.5em; // adjust space below title
   }
 
   .subtitle {
@@ -291,6 +301,7 @@ td {
     font-style: italic;
     font-weight: bolder;
     margin: 0;
+    margin-bottom: 1em; // put some spacing before authors
   }
 
   .institute,
@@ -310,6 +321,7 @@ td {
   .quarto-title-authors {
     display: flex;
     justify-content: center;
+    margin-top: 1em; // spacing above authors
 
     .quarto-title-author {
       padding: 0 1em;
@@ -320,67 +332,43 @@ td {
 }
 
 
-/* Style 1: Section Slide Without Body Text and Lists */
-.section-slide {
-  /* Center the content */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+// /* Style 1: Section Slide Without Body Text and Lists */
+// .section-slide {
+//   /* Center the content */
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100%;
 
-  /* Remove any existing padding or margin */
-  padding: 0;
-  margin: 0;
+//   /* Remove any existing padding or margin */
+//   padding: 0;
+//   margin: 0;
 
-  /* Style the heading */
-  h2 {
-    font-family: $presentation-heading-font;
-    font-size: 2em;
-    /* Adjust as needed */
-    color: $unm-cherry;
-    text-align: center;
-  }
-
-  /* Hide all other elements */
-  p,
-  ul,
-  ol,
-  li,
-  h3,
-  h4,
-  blockquote,
-  pre,
-  code,
-  img {
-    display: none;
-  }
-}
-
-// .section-slide-text {
-
-//   /* Style the H2 heading */
+//   /* Style the heading */
 //   h2 {
 //     font-family: $presentation-heading-font;
 //     font-size: 2em;
 //     /* Adjust as needed */
-//     color: $unm-turquoise;
+//     color: $unm-cherry;
 //     text-align: center;
-//     padding-bottom: 5rem;
-//     // margin: 5rem;
-//     ;
 //   }
 
-//   p {
-//     font-size: $presentation-font-size-root;
-//     text-align: left;
-//     margin-top: 5rem;
-//     margin: 3rem;
+//   /* Hide all other elements */
+//   p,
+//   ul,
+//   ol,
+//   li,
+//   h3,
+//   h4,
+//   blockquote,
+//   pre,
+//   code,
+//   img {
+//     display: none;
 //   }
 // }
 
 // Code Slide Styles
-
-
 .code-slide {
   // background-color: $bg-color;
   margin: 0;
@@ -390,44 +378,30 @@ td {
   line-height: $code-line-height;
 
   h2 {
-    font-size: $presentation-h3-font-size;
+    font-size: $presentation-h2-font-size;
     background-color: $bg-color;
     padding-top: 0;
     padding-bottom: 0;
   }
 }
 
-.norml-slide {
-  font-family: $font-family-sans-serif;
-  font-size: $font-size-small;
-  color: $body-text-color;
-  background-color: $bg-color;
-  line-height: $line-height;
-  margin-top: 0%;
-  margin-bottom: 2rem;
-}
-
 // Smaller Slide Styles
-
 .small-slide {
-  font-family: $font-family-sans-serif;
-  font-size: $font-size-small;
-  color: $body-text-color;
-  background-color: $bg-color;
-  line-height: $line-height;
-  margin-top: 0%;
-  margin-bottom: 2rem;
+  font-size: $font-size-medium-small;
+  // line-height: $line-height;
+
+  h2 {
+    font-size: 1.9em;
+    font-weight: bolder;
+    margin: 1rem 0 2.5rem 0;
+  }
 }
 
 // Small Slide Styles
 .tiny-slide {
-  font-family: $font-family-sans-serif;
-  font-size: $font-size-tiny;
-  color: $body-text-color;
   background-color: $bg-color;
-  line-height: 1.2em;
-  margin-top: 0%;
-  margin-bottom: 1rem;
+  font-size: $font-size-small;
+  // line-height: $line-height;
 }
 
 // Quote Slide Styles
@@ -468,11 +442,9 @@ td {
   left: 0;
   width: 100%;
   text-align: center;
-  font-size: 1em;
-  color: #333333;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px 0;
-  z-index: 1000;
+  font-size: 1.2em;
+  // padding: 10px 0;
+  // z-index: 1000;
   pointer-events: none;
 }
 
