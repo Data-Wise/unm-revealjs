@@ -318,16 +318,16 @@ td {
 .small-slide {
   font-size: $presentation-font-smaller;
 
-  h2 {
-    font-size: $presentation-font-smaller;
-    font-weight: bolder;
-    margin: 1rem 0 2.5rem 0;
-  }
+  // h2 {
+  //   font-size: $presentation-font-smaller;
+  //   font-weight: bolder;
+  //   margin: 1rem 0 2.5rem 0;
+  // }
 }
 
 // Tiny Slide
 .tiny-slide {
-  background-color: $body-bg;
+  // background-color: $body-bg;
   font-size: $font-size-small;
 }
 
@@ -362,17 +362,19 @@ td {
 // Section Slide
 
 .section-slide {
-  background-color: $body-bg;
+  // background-color: $body-bg;
   font-size: $presentation-h2-font-size;
   // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-  // h1,
-  // h2 {
-  //   font-size: $presentation-h1-font-size;
-  //   color: $accent;
-  //   background-color: $body-bg;
-  //   font-family: $font-family-heading-alt2;
-  // }
+  p,
+  li,
+  ul,
+  ol {
+    // font-size: $font-size-small;
+    // color: $body-color;
+    // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 0.5em;
+  }
 }
 
 // ====================
