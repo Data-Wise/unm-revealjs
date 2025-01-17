@@ -49,7 +49,7 @@ $presentation-font-size-root: 29px; // Base font size for headings
 $presentation-h1-font-size: 2.5em !default;
 $presentation-h2-font-size: 1.8em !default;
 $presentation-h3-font-size: 1.2em !default;
-$presentation-heading-font: $font-family-sans-serif;
+$presentation-heading-font: Lato, sans-serif !default;
 $presentation-heading-color: $unm-cherry;
 $presentation-heading-line-height: 1.2em;
 $presentation-font-smaller: 0.8em; // Sass variable for smaller font size
@@ -67,16 +67,16 @@ $code-block-bg: rgb(223, 233, 237) !default; //Sass variable for code block back
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,350,350i,400,400i&display=swap'); // Import Roboto font
 @import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap'); // Import 'Fira Code' font
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap'); // Import 'Roboto Slab' font
+// @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap'); // Import 'Roboto Slab' font
 
 /* import Lato font */
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap'); // Import Lato font
-/* import Open Sans font */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap'); // Import Open Sans font
-/* import Tangerine font */
-@import url('https://fonts.googleapis.com/css?family=Tangerine&display=swap'); // Import Tangerine font
-/* import Fira Sans font */
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap'); // Import Fira Sans font
+// /* import Open Sans font */
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap'); // Import Open Sans font
+// /* import Tangerine font */
+// @import url('https://fonts.googleapis.com/css?family=Tangerine&display=swap'); // Import Tangerine font 
+// /* import Fira Sans font */
+// @import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap'); // Import Fira Sans font
 
 
 
@@ -108,7 +108,6 @@ $code-block-bg: rgb(223, 233, 237) !default; //Sass variable for code block back
 
 
 #title-slide {
-
   .title,
   .subtitle {
     opacity: 0.80;
@@ -298,61 +297,6 @@ td {
 // 5. Slide Type Styles
 // ====================
 
-// // Title Slide
-// .title-slide {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: left;
-//   min-height: 100vh;
-//   text-align: center;
-//   margin: 2em 0;
-//   padding-bottom: 2%;
-
-//   .title {
-//     color: $unm-cherry;
-//     font-size: 2em;
-//     font-weight: bolder;
-//     margin: 2em 0 2em 0;
-//     padding-top: 20%;
-//     padding-bottom: 5rem;
-//   }
-
-//   .subtitle {
-//     color: $unm-cherry;
-//     font-size: 1.5em;
-//     font-style: italic;
-//     font-weight: bolder;
-//     margin: 0 0 1em 0;
-//   }
-
-//   .institute,
-//   .quarto-title-affiliation,
-//   .quarto-title-author-email {
-//     font-style: normal;
-//     font-size: $font-size-small;
-//     color: $accent;
-//   }
-
-//   .author,
-//   .quarto-title-author-name {
-//     font-size: $font-size-small;
-//     color: $accent;
-//   }
-
-//   .quarto-title-authors {
-//     display: flex;
-//     justify-content: center;
-//     margin-top: 1em;
-
-//     .quarto-title-author {
-//       padding: 0 1em;
-//       width: 100%;
-//       justify-content: center;
-//     }
-//   }
-// }
-
 // Code Slide
 .code-slide {
   margin: 0;
@@ -375,7 +319,7 @@ td {
   font-size: $presentation-font-smaller;
 
   h2 {
-    font-size: 1.75em;
+    font-size: $presentation-font-smaller;
     font-weight: bolder;
     margin: 1rem 0 2.5rem 0;
   }
@@ -413,6 +357,22 @@ td {
     color: $accent;
     background-color: $body-bg;
   }
+}
+
+// Section Slide
+
+.section-slide {
+  background-color: $body-bg;
+  font-size: $presentation-h2-font-size;
+  // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  // h1,
+  // h2 {
+  //   font-size: $presentation-h1-font-size;
+  //   color: $accent;
+  //   background-color: $body-bg;
+  //   font-family: $font-family-heading-alt2;
+  // }
 }
 
 // ====================

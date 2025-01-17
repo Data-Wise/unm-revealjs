@@ -27,6 +27,12 @@ Next, we'll brief review some theme-specific components.
 [features](https://quarto.org/docs/presentations/revealjs/)
 can be used with this theme, even if we don't highlight them here.
 
+## Section Slide {.section-slide}
+
+This is a section slide, which is a slide that contains only a section title.
+
+- This is useful for breaking up the presentation into sections.
+
 ## Additional theme classes
 
 ### Special classes for emphasis

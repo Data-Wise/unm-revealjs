@@ -13,9 +13,9 @@ execute:
   echo: true 
 ---
 
-# Introduction
+# Introduction {.section-slide}
 
-## Overview {.smaller}
+## Overview
 
 In mathematical statistics, well-structured experimental designs and robust
 analytical methods are essential for drawing valid conclusions about treatment
@@ -29,7 +29,7 @@ incorporating any blocking factors.
 -   Provides a framework for linear modeling, least squares estimation, and
     hypothesis testing.
 
-## Learning Objectives {.smaller}
+## Learning Objectives
 
 1.  Understand the rationale and structure of the CRD.
 2.  Carry out a randomization procedure and interpret why coding treatments matters.

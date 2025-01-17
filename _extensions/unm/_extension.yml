@@ -6,12 +6,12 @@ contributes:
   formats:
     revealjs:
       logo: "images/unm-logo.png"
-      title-slide-attributes:
-        data-background-image: "images/unm-title-slide.png"
-        data-background-size: "contain"
-        data-background-position: bottom
-        data-background-opacity: "0.3"
-        data-background-repeat: "no-repeat"
+      # title-slide-attributes:
+      #   data-background-image: "images/unm-title-slide.png"
+      #   data-background-size: "contain"
+      #   data-background-position: bottom
+      #   data-background-opacity: "0.3"
+      #   data-background-repeat: "no-repeat"
       slide-number: true
       show-slide-number: all
       scrollable: true
