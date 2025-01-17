@@ -1,0 +1,408 @@
+---
+title: "Template UNM reveal.js"
+format: 
+  unm-revealjs:
+    slide-number: c/t
+author:
+  - name: Your Name
+    orcid: 0000-0000-0000-0000
+    email: alias@email.com
+    affiliations: Your Institution
+# date: last-modified
+execute: 
+  echo: true 
+---
+
+# Introduction
+
+## Overview {.smaller}
+
+In mathematical statistics, well-structured experimental designs and robust
+analytical methods are essential for drawing valid conclusions about treatment
+effects. A fundamental design is the **Completely Randomized Design (CRD)**, where
+each experimental unit is randomly assigned to one of several treatments without
+incorporating any blocking factors.
+
+### Key Analytic Tool: **One-Way Analysis of Variance (ANOVA)**
+
+-   Tests whether at least two of several treatment means differ significantly.
+-   Provides a framework for linear modeling, least squares estimation, and
+    hypothesis testing.
+
+## Learning Objectives {.smaller}
+
+1.  Understand the rationale and structure of the CRD.
+2.  Carry out a randomization procedure and interpret why coding treatments matters.
+3.  Formulate and apply the one-way ANOVA model (including assumptions).
+4.  Explore estimability, least squares estimation, and the distribution of
+    estimators.
+5.  Use the ANOVA test to decide if treatments differ significantly.
+6.  Calculate sample size and power for planning experiments.
+7.  Demonstrate R-based procedures for randomization, modeling, and ANOVA.
+
+## Quick Discussion Prompt
+
+**Question:** In your own field of research, where could you apply a completely
+randomized design? What treatments would you test, and why?
+
+# CRD Overview
+
+## Definition and Rationale
+
+A **Completely Randomized Design (CRD)**:
+
+-   **Definition:** Each experimental unit is randomly assigned to a single
+    treatment, with no blocking.
+-   **Advantages:** Simplicity, straightforward randomization, easy analysis.
+-   **When to Use:** When no major nuisance factors (e.g., time, location) need
+    special control.
+
+## Example Scenarios
+
+1.  Comparing three battery types: alkaline, lithium, and nickel-cadmium. Randomly
+    assign each battery to a type and measure voltage endurance, measured in hours.
+
+2.  Example from Public Health: Testing three diets for weight loss, randomly
+    assigning participants to each diet. The diets could be low-carb, low-fat, and
+    Mediterranean. The outcome could be weight loss in pounds.
+
+3.  Examle from Psychology: Testing three study techniques for memory retention,
+    randomly assigning students to each technique. The study techniques could be
+    reading, flashcards, and practice tests. The outcome could be the number of words
+    recalled.
+
+## Flowchart of CRD Steps
+
+```{mermaid}
+%%| echo: false
+%%| fig-align: center
+flowchart TB
+    A[Define Objectives] --> B[Identify Treatments]
+    B --> C[Determine Sample Size]
+    C --> D[Randomly Assign Units]
+    D --> E[Collect Data]
+    E --> F[Perform ANOVA & Interpret]
+```
+
+## Exercise
+
+Suppose you have 15 plants to test three fertilizer types (5 replicates each).
+Outline the steps you'd take to implement a CRD for this scenario.
+
+# Principles of Randomization
+
+## Randomization Concept
+
+Randomization ensures that each experimental unit has an equal chance of receiving any treatment. This prevents systematic bias and justifies the assumptions underlying standard statistical tests.
+
+**Example:**
+Use a random number generator to assign treatments to plots, ensuring no predetermined pattern.
+
+## How to Perform Randomization
+
+### **Procedure**
+
+- INPUT: List of experimental units, List of treatments
+- OUTPUT: Randomized assignments of treatments to units
+
+1. Define $N$ = Total number of experimental units (e.g., 12).
+2. Define $T$ = List of treatments (e.g., A, B, C).
+3. Repeat $T$ to match the number of experimental units.
+4. Shuffle the list of the repeated treatmentsn from step 3 randomly.
+5. Assign shuffled treatments to the experimental units.
+6. Return randomized assignments
+
+## R Implementation: Randomization Examples in CRD {.slide-code}
+
+```{r}
+
+N <- 12 # Number of experimental units, Step 1
+# Define experimental units and treatments
+experimental_units <- 1:N ## 10 experimental units
+treatments <- c("A", "B", "C") ## 3 treatments, Step 2
+
+# Repeat treatments to match the number of units. The code covers both balanced and unbalanced designs.
+treatments <- rep(treatments, length.out = N)  ## Step 3
+
+# For a balanced design, we can also use:
+# treatments <- rep(treatments, each = N/length(treatments))
+
+# Shuffle (randomize) treatments randomly to assign to units, Step 4
+set.seed(123) ## For reproducibility
+randomized_treatments <- sample(treatments)
+
+# Create a data frame with randomized assignments
+randomization_crd <- data.frame(Unit = experimental_units, Treatment = randomized_treatments)  ## Step 5
+print(randomization_crd)
+```
+
+
+# The One-Way ANOVA Model
+
+## Model Formulation
+
+Consider $v$ treatments, each with $n$ observations:
+
+$$
+Y_{ij} = \mu + \tau_i + \varepsilon_{ij},
+$$
+
+-   $Y_{ij}$: Response from the $j$-th unit of treatment $i$.
+-   $\mu$: Overall mean.
+-   $\tau_i$: Effect of treatment $i$.
+-   $\varepsilon_{ij}$: Random errors, assumed $\text{i.i.d. } N(0, \sigma^2)$.
+
+**Null Hypothesis**: $H_0: \tau_1 = \tau_2 = \dots = \tau_v = 0$
+
+## Example
+
+If testing 4 different drug dosages (A, B, C, D) on patients' blood pressure
+reduction:
+
+-   $i$ in $\{A,B,C,D\}$
+-   $\tau_i$ is each dosage's deviation from the overall mean
+-   $\varepsilon_{ij}$ is random variation in patient responses
+
+## Estimability and Least Squares Estimation-normal
+
+- Not all model parameters ($\tau_i$) are independently estimable. 
+- However, **estimable functions**, linear combinations of parameters that correspond to expected values of observed data, can be estimated uniquely.
+
+
+The least squares estimators (LSEs) solve the normal equations obtained by
+minimizing the sum of squared errors (SSE):
+
+$$
+\text{SSE} = \sum_{i=1}^v \sum_{j=1}^n (Y_{ij} - \hat{\mu}_i)^2,
+$$ {#eq-sse}
+
+where $\hat{\mu}_i$ is the estimated mean for treatment $i$. The LSE for each
+treatment mean $\mu_i = \mu + \tau_i$ is simply the sample mean
+$\bar{Y}_i = \frac{1}{n}\sum_{j=1}^n Y_{ij}$.
+
+
+## Estimability and Least Squares Estimation-small{.small-slide}
+
+- Not all model parameters ($\tau_i$) are independently estimable. 
+- However, **estimable functions**, linear combinations of parameters that correspond to expected values of observed data, can be estimated uniquely.
+
+
+The least squares estimators (LSEs) solve the normal equations obtained by
+minimizing the sum of squared errors (SSE):
+
+$$
+\text{SSE} = \sum_{i=1}^v \sum_{j=1}^n (Y_{ij} - \hat{\mu}_i)^2,
+$$ {#eq-sse}
+
+where $\hat{\mu}_i$ is the estimated mean for treatment $i$. The LSE for each
+treatment mean $\mu_i = \mu + \tau_i$ is simply the sample mean
+$\bar{Y}_i = \frac{1}{n}\sum_{j=1}^n Y_{ij}$.
+
+## Estimability and Least Squares Estimation-tiny {.tiny-slide}
+
+- Not all model parameters ($\tau_i$) are independently estimable. 
+- However, **estimable functions**, linear combinations of parameters that correspond to expected values of observed data, can be estimated uniquely.
+
+
+The least squares estimators (LSEs) solve the normal equations obtained by
+minimizing the sum of squared errors (SSE):
+
+$$
+\text{SSE} = \sum_{i=1}^v \sum_{j=1}^n (Y_{ij} - \hat{\mu}_i)^2,
+$$ {#eq-sse}
+
+where $\hat{\mu}_i$ is the estimated mean for treatment $i$. The LSE for each
+treatment mean $\mu_i = \mu + \tau_i$ is simply the sample mean
+$\bar{Y}_i = \frac{1}{n}\sum_{j=1}^n Y_{ij}$.
+
+## Distribution of Estimators
+
+Under the normal error assumption, each estimator $\bar{Y}_i$ is normally
+distributed, with:
+
+$$
+E(\bar{Y}_i) = \mu_i, \quad \text{Var}(\bar{Y}_i) = \frac{\sigma^2}{n}.
+$$ {#eq-estimator-variance}
+
+The error variance $\sigma^2$ is estimated by the mean square error (MSE):
+
+$$
+\hat{\sigma}^2 = \frac{\text{SSE}}{N - v},
+$$ {#eq-mse}
+
+where $N = v \cdot n$ is the total number of observations.
+
+
+# ANOVA Mechanics
+
+## Hypothesis Testing
+
+The **ANOVA F-test** for one-way layout:
+
+$$
+F = \frac{\text{MST}}{\text{MSE}} = \frac{\text{SST}/(v-1)}{\text{SSE}/(N - v)},
+$$
+
+-   $N = v \times n$ total observations.
+-   **Reject** $H_0$ if $F$ exceeds the critical $F$-value or if
+    $p\text{-value} < \alpha$.
+
+## ANOVA Table
+
+| Source    | DF      | SS               | MS              | F-ratio |
+| --------- | ------- | ---------------- | --------------- | ------- |
+| Treatment | $v-1$   | $SS_{Treatment}$ | MST=SST/$v-1$   | MST/MSE |
+| Error     | $N - v$ | $SSE_{Error}$   | MSE=SSE/$N - v$ |         |
+| Total     | $N - 1$ | $SS_{Total}$     |                 |         |
+
+## Exercise
+
+**Prompt:** Based on the ANOVA table, which row indicates the variability *within*
+treatments and why?
+
+# Knowledge Check
+
+## Which Statement About One-Way ANOVA is Correct? {.quiz-question}
+
+-   It requires blocking factors to be included for validity.
+-   {.correct}: It compares means across multiple
+    treatments to see if any differ.
+-   It only applies to two treatments.
+-   It cannot incorporate randomization.
+
+# Estimability & Least Squares
+
+## Estimable Functions
+
+-   **Constraint**: $\sum_{i=1}^v \tau_i = 0$.
+-   Differences of means ($\mu_i - \mu_j$) are **estimable**.
+-   Individual $\tau_i$ alone is not.
+
+$$ 
+\begin{aligned}
+\hat{\mu}_i &= \bar{Y}_i, \quad \text{Var}(\bar{Y}_i) = \frac{\sigma^2}{n}, \\
+\hat{\mu}_i - \hat{\mu}_j &= \bar{Y}_i - \bar{Y}_j, \quad \text{Var}(\bar{Y}_i - \bar{Y}_j) = \frac{2\sigma^2}{n}.
+\end{aligned}
+$$
+
+## Numerical Example
+
+If you have 3 treatments (A, B, C) each with 4 observations:
+
+-   $\hat{\mu}_A = \bar{Y}_A = 10.2$
+-   $\hat{\mu}_B = \bar{Y}_B = 12.1$
+-   $\hat{\mu}_C = \bar{Y}_C = 14.3$
+
+Estimate $\mu_A - \mu_B$ by $10.2 - 12.1 = -1.9$.
+
+## Exercise
+
+**Prompt:** Show how you'd calculate $\hat{\mu}_B - \hat{\mu}_C$. Why is it valid to
+estimate this difference directly from sample means?
+
+# Sample Size & Power
+
+## Determining Sample Size
+
+-   Use pilot data or prior knowledge to estimate $\sigma^2$.
+-   Desired effect size $\delta$ guides how many replicates needed to detect a
+    difference.
+
+$$
+\text{Power} \approx P(\text{Reject } H_0 \mid \tau_i = \delta)
+$$
+
+## R Code for Power
+
+```{r}
+#| label: r-power
+pwr::pwr.anova.test(k = 3, f = 0.3, sig.level = 0.05, power = 0.8)
+```
+
+Adjust parameters for effect size, alpha, and power.
+
+## Exercise
+
+**Prompt:** If pilot data suggests $\sigma^2 = 4$ and you want an 80% chance to
+detect a mean difference of 2, how would you design a power-based sample size
+calculation?
+
+# Practical R Examples
+
+## Randomization and Data Setup
+
+```{r}
+#| label: r-randomization
+set.seed(123)
+treatments <- rep(c("A","B","C"), each=5)
+rand_order <- sample(treatments)
+rand_order
+```
+
+**Interpretation**: Lists how 15 experimental units are randomly assigned to 3
+treatments.
+
+## Fitting One-Way ANOVA in R
+
+```{r}
+data <- data.frame(
+    Y = c(
+        10.1, 9.8, 10.5, 9.7, 10.2,
+        12.0, 12.2, 12.1, 11.9, 12.3,
+        13.5, 13.2, 13.4, 13.8, 13.0
+    ),
+    trt = rep(c("A", "B", "C"), each = 5)
+)
+
+model <- aov(Y ~ trt, data = data)
+summary(model)
+```
+
+**Output**: p-value, F-statistic, and indication of whether treatments differ.
+
+## Quick Quiz
+
+## Which R Function Summarizes ANOVA Results? {.quiz-question}
+
+-   Option 1: `lm()`
+-   Option 2: `glm()`
+-   [**Option 3: `summary(aov())` which is correct**]{.correct}
+-   Option 4: `head()`
+
+# Applications & Challenges
+
+## Real-World Integration
+
+-   **Public Health**: Compare different vaccination campaigns' effectiveness via
+    CRD.
+-   **Industry**: Test new manufacturing processes for throughput.
+-   **Challenge**: Ensuring assumptions (normality, equal variances) hold. Use
+    transformations or nonparametric tests if violated.
+
+## Exercise
+
+**Prompt:** Propose a real-world scenario where a CRD is advantageous. Identify
+potential pitfalls and how you'd address them (e.g., normality check, outliers).
+
+# Conclusion and Further Learning
+
+## Summary
+
+-   **CRD**: Simple design where randomization is key.
+-   **One-Way ANOVA**: Fundamental method to compare multiple treatment means.
+-   **Estimability & LSE**: Understanding how treatment effects are derived.
+-   **Sample Size & Power**: Critical for ensuring meaningful conclusions.
+-   **R Implementation**: Randomization, model fitting, and inference are
+    straightforward in R.
+
+## Additional Resources
+
+1.  Dean, A., Voss, D., & Draguljić, D. (2017). *Design and Analysis of Experiments*.
+    Springer.\
+2.  Montgomery, D. C., & Runger, G. C. (2010). *Applied Statistics and Probability
+    for Engineers*. Wiley.\
+3.  Christensen, R. (2018). *Analysis of Variance, Design, and Regression*. Chapman
+    and Hall/CRC.\
+4.  Libre Textbook: [Analysis of Variance and Design of Experiments]
+
+  [Analysis of Variance and Design of Experiments]: https://stats.libretexts.org/Bookshelves/Advanced_Statistics/Analysis_of_Variance_and_Design_of_Experiments
