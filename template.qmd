@@ -4,12 +4,11 @@ subtitle: "A Presentation Template"
 format: 
   unm-revealjs:
     slide-number: true
-    transition: fade
 author:
   - name: Your Name
     orcid: 0000-0000-0000-0000
     email: user-id@unm.edu
-    affiliations: The University of New Mexico
+    # affiliations: The University of New Mexico
 date: last-modified
 ---
 

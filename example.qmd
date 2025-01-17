@@ -7,7 +7,7 @@ author:
   - name: Your Name
     orcid: 0000-0000-0000-0000
     email: alias@email.com
-    affiliations: Your Institution
+    # affiliations: Your Institution
 # date: last-modified 
 ---
 
