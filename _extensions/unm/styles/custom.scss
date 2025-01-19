@@ -422,9 +422,9 @@ td {
 .slide-logo {
   position: fixed;
   /* Fixes the logo relative to the viewport */
-  top: 10px;
+  top: 5px;
   /* Adjust as needed for vertical positioning */
-  right: 20px;
+  right: 10px;
   /* Adjust as needed for horizontal positioning */
   z-index: 1000;
   /* Ensures the logo stays above other elements */
@@ -444,7 +444,8 @@ td {
   /* Maintains aspect ratio */
 }
 
-//
+
+/* Position the slide number */
 .slide-number,
 .reveal.has-logo .slide-number {
   bottom: 10px !important;
@@ -453,7 +454,22 @@ td {
   color: $body-color !important;
 }
 
+/* ====================
+   9. Menu Button Positioning Styles
+   ==================== */
 
+/* Reposition the menu button to the top-left corner */
+.reveal .slide-menu-button {
+  top: 10px;
+  /* Adjust the value as needed */
+  left: 10px;
+  /* Adjust the value as needed */
+  bottom: auto;
+  /* Override the default bottom positioning */
+  position: absolute;
+  z-index: 1000;
+  /* Ensure it appears above other elements */
+}
 
 /*-- scss:mixins --*/
 // ====================
