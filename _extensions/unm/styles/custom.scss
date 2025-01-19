@@ -413,5 +413,47 @@ td {
 
 }
 
+
+/* ====================
+   8. Logo Positioning Styles
+   ==================== */
+
+/* Position the logo container */
+.slide-logo {
+  position: fixed;
+  /* Fixes the logo relative to the viewport */
+  top: 10px;
+  /* Adjust as needed for vertical positioning */
+  right: 20px;
+  /* Adjust as needed for horizontal positioning */
+  z-index: 1000;
+  /* Ensures the logo stays above other elements */
+
+  /* Optional: Adjust the size of the logo */
+  width: 100px;
+  /* Set desired width */
+  height: auto;
+  /* Maintains aspect ratio */
+}
+
+/* Ensure the logo image scales properly */
+.logo img {
+  width: 100%;
+  /* Makes the image take the full width of the container */
+  height: auto;
+  /* Maintains aspect ratio */
+}
+
+//
+.slide-number,
+.reveal.has-logo .slide-number {
+  bottom: 10px !important;
+  right: 10px !important;
+  top: unset !important;
+  color: $body-color !important;
+}
+
+
+
 /*-- scss:mixins --*/
 // ====================
