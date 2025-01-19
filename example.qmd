@@ -4,6 +4,7 @@ subtitle: "A Presentation Template"
 format: 
   unm-revealjs:
     slide-number: c/t
+    # logo: "images/ms.png"
 author:
   - name: Your Name
     orcid: 0000-0000-0000-0000

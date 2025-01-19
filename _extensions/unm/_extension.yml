@@ -5,7 +5,7 @@ quarto-required: ">=1.6.0"
 contributes:
   formats:
     revealjs:
-      logo: "images/math-stat-logo.png"
+      logo: "images/ms-logo.png"
       title-slide-attributes:
         data-background-image: "images/unm-title-slide.png"
         data-background-size: "520px 150px"
