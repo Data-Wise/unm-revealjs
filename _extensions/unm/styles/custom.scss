@@ -22,8 +22,8 @@ $body-bg: #ffffff; // Body background
 $body-color: #222222; // Body text color
 $link-color: $unm-turquoise; // Link color
 $link-color-hover: lighten($link-color, 15%); // Link hover color
-$selection-bg: lighten($unm-sandia-sunset, 30%); // Selection background
-$selection-color: lighten($unm-lobo-gray, 25%); // Selection text color
+$selection-bg: lighten($unm-silver, 17%); // Selection background
+$selection-color: lighten($unm-terra, 2%); // Selection text color
 $light-bg-code-color: #4758ab; // Light background code color
 
 // --- Font Families ---
@@ -83,7 +83,7 @@ $code-block-bg: rgb(223, 233, 237) !default; // Code block background
 // ====================
 
 html {
-  font-size: $presentation-font-size-root; // 16px base
+  font-size: $presentation-font-size-root; // 30px
 }
 
 body {
@@ -360,6 +360,51 @@ td {
     bold,
     normal,
     4px);
+}
+
+// ====================
+// 7. Title Slide Styles
+// ====================
+
+#title-slide {
+
+  .title,
+  .subtitle {
+    opacity: 0.80;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: $unm-cherry !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .title {
+    font-size: $font-size-large; // e.g., 2.5rem
+  }
+
+  .subtitle {
+    font-size: $presentation-h2-font-size; // e.g., 1.8rem
+  }
+
+  .institute,
+  .quarto-title-author,
+  .date {
+    margin-top: 0;
+    margin-bottom: $spacing-lg;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1em; // Default size
+    color: $accent !important; // Optional: Adjust color if needed
+  }
+
+  // Customizing the Date Font Size
+  .date {
+    margin-bottom: $spacing-xxl;
+    font-size: .8rem; // Adjust to your preferred size
+    /* Additional Styling (Optional) */
+    color: $unm-turquoise;
+    font-weight: bold;
+  }
 }
 
 /*-- scss:mixins --*/

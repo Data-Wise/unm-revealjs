@@ -1,5 +1,6 @@
 ---
-title: "Template UNM reveal.js"
+title: "UNM reveal.js Template"
+subtitle: "A Presentation Template"
 format: 
   unm-revealjs:
     slide-number: c/t
@@ -7,8 +8,8 @@ author:
   - name: Your Name
     orcid: 0000-0000-0000-0000
     email: alias@email.com
-    # affiliations: Your Institution
-# date: last-modified 
+    affiliations: Department of Mathematics & Statistics
+date: last-modified 
 ---
 
 ## Example slide
@@ -39,12 +40,12 @@ This is a `{.section slide}` class with texts.
 - This is useful for breaking up the presentation into sections.
  -->
 
-## Additional theme classes
+## Additional theme classes {.small-slide}
 
 ### Special classes for emphasis
 
-- `.alert` class for default emphasis, e.g. [important note]{.alert}.
-- `.fg` class for custom colour, e.g. [important note]{.fg style="--col: #e64173"}.
+- `.alert` class for default emphasis, e.g. `[important note]{.alert}` ==> [important note]{.alert}.
+- `.fg` class for custom color, e.g. [important note]{.fg style="--col: #e64173"}.
 - `.bg` class for custom background, e.g. [important note]{.bg style="--col: #e64173"}.
 - `.highlight` class for highlighting, e.g. [important note]{.highlight}.
 - `.note` class for notes, e.g. [important note]{.note}.
@@ -53,8 +54,8 @@ This is a `{.section slide}` class with texts.
 ### Cross-references
 
 - `.button` class provides a Beamer-like button, e.g.
-[[Summary]{.button}](#sec-summary)
-
+  - `[[Call-out Section]{.button}](#callout-sec)`
+[[Call-out Section]{.button}](#callout-sec)
 
 ## Code blocks I
 
@@ -164,7 +165,7 @@ Here is an example of a slide with a long list and a tiny attribute class `{.tin
 13. This is item 13
 14. This is item 14
 
-## Callouts Examples {.tiny-slide}
+## Callouts Examples {#callout-sec .tiny-slide}
 
 Here are some examples of callout boxes:
 
@@ -186,9 +187,4 @@ This is a warning callout box.
 
 ::: {.callout-caution}
 This is a caution callout box.
-:::
-
-::: {.callout-danger}
-## Danger
-This is a danger callout box.
 :::
