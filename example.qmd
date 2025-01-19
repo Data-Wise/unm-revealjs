@@ -46,6 +46,9 @@ This is a `{.section slide}` class with texts.
 - `.alert` class for default emphasis, e.g. [important note]{.alert}.
 - `.fg` class for custom colour, e.g. [important note]{.fg style="--col: #e64173"}.
 - `.bg` class for custom background, e.g. [important note]{.bg style="--col: #e64173"}.
+- `.highlight` class for highlighting, e.g. [important note]{.highlight}.
+- `.note` class for notes, e.g. [important note]{.note}.
+- `.warning` class for warnings, e.g. [warning note]{.warning}.
 
 ### Cross-references
 

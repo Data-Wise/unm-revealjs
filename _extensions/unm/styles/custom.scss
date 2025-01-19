@@ -286,20 +286,81 @@ td {
   }
 }
 
-// Section Slide
+// ====================
+// 5. Emphasis Classes
+// ====================
 
-// .section-slide {
-//   // background-color: $body-bg;
-//   font-size: $presentation-h3-font-size;
-//   // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Mixin for Emphasis Classes */
+@mixin emphasis($bg-color, $border-color, $text-color, $padding-y: $spacing-xxs, $padding-x: $spacing-x, $font-weight: normal, $font-style: normal, $border-radius: 4px) {
+  background-color: $bg-color;
+  border-left: 5px solid $border-color;
+  padding: $padding-y $padding-x;
+  margin: $spacing-md 0;
+  border-radius: $border-radius;
 
-//   p,
-//   li,
-//   ul,
-//   ol {
-//     padding-left: 0.5em;
-//   }
-// }
+  color: $text-color;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+/* Alert Emphasis */
+.alert {
+  @include emphasis(rgba($unm-cherry, 0.1), // Background color
+    $unm-cherry, // Border color
+    $unm-cherry, // Text color
+    $spacing-xs, // Padding top/bottom
+    $spacing-sm, // Padding left/right
+    bold, // Font weight
+    normal, // Font style
+    4px // Border radius
+  );
+}
+
+/* Foreground Color Emphasis */
+.fg {
+  color: $unm-turquoise;
+  font-weight: bold;
+}
+
+/* Background Color Emphasis */
+.bg {
+  background-color: $unm-sandia-sunset;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+/* Highlight Emphasis */
+.highlight {
+  background-color: $unm-high-noon;
+  color: #000000;
+  padding: 0.2rem 0.4rem;
+  border-radius: 2px;
+}
+
+/* Note Emphasis */
+.note {
+  @include emphasis(rgba($unm-mesa, 0.1),
+    $unm-mesa,
+    $unm-mesa,
+    $spacing-xs,
+    $spacing-sm,
+    normal,
+    italic,
+    4px);
+}
+
+/* Warning Emphasis */
+.warning {
+  @include emphasis(rgba($unm-terra, 0.1),
+    $unm-terra,
+    $unm-terra,
+    $spacing-xs,
+    $spacing-sm,
+    bold,
+    normal,
+    4px);
+}
 
 /*-- scss:mixins --*/
 // ====================
