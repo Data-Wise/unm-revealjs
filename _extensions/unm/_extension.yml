@@ -15,12 +15,13 @@ contributes:
       slide-number: true
       show-slide-number: all
       scrollable: true
+      margin: 0
       theme:
       - simple
       - "styles/custom.scss"
     date-format: long
-    includes:
-      after-body: footer.html
+    header-includes:
+    - '<img src="images/unm-logo.png" style="width: 50%; height: 200px;">'
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"

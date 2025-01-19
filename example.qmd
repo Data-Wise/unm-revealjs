@@ -33,6 +33,9 @@ depending on how long it is.
 [features](https://quarto.org/docs/presentations/revealjs/)
 can be used with this theme, even if we don't highlight them here. -->
 
+
+# Regular Section Slide 
+
 # Section Slide without Text {.section-slide}
 
 
@@ -57,7 +60,7 @@ This is a `{.section slide}` class with texts.
 [[Summary]{.button}](#sec-summary)
 
 
-## Code blocks
+## Code blocks I
 
 This is a regular code block in a slide:
 
@@ -69,8 +72,20 @@ y <- 2*x + rnorm(100)
 summary(lm(y ~ x))
 ``` 
 
+## Code blocks II
+This is a regular code block with the cell option, `output-location: column`:
 
-## Code blocks {.small-slide}
+```{r}
+#| echo: true
+#| output-location: column
+# This is an R code block
+x <- rnorm(100)
+y <- 2*x + rnorm(100)
+summary(lm(y ~ x))
+``` 
+
+
+## Code blocks II {.small-slide}
 
 This is a code slide with the class `{.small-slide}`, which is useful for code-heavy slides.
 
@@ -96,66 +111,62 @@ randomization_crd <- data.frame(Unit = experimental_units, Treatment = randomize
 print(randomization_crd)
 ```
 
-
 ## A Long Slide
 
 Here is an example of a slide with a long list:
 
-1.  Understand the rationale and structure of the CRD.
-2.  Carry out a randomization procedure and interpret why coding treatments matters.
-3.  Formulate and apply the one-way ANOVA model (including assumptions).
-4.  Explore estimability, least squares estimation, and the distribution of
-    estimators.
-5.  Use the ANOVA test to decide if treatments differ significantly.
-6.  Calculate sample size and power for planning experiments.
-7.  Demonstrate R-based procedures for randomization, modeling, and ANOVA.
-8.  Interpret the results of a CRD analysis.
-9.  Apply the CRD to real-world research scenarios.
-10. Understand the limitations and assumptions of the CRD.
-11. Additional item
-12. Additional item
-13. Additional item
-14. Additional item
+1. This is item 1
+2. This is item 2
+3. This is item 3
+4. This is item 4
+5. This is item 5
+6. This is item 6
+7. This is item 7
+8. This is item 8
+9. This is item 9
+10. This is item 10
+11. This is item 11
+12. This is item 12
+13. This is item 13
+14. This is item 14
 
 ## A Long Slide {.small-slide}
 
 Here is an example of a slide with a long list and a smaller attribute class `{.small-slide}`:
 
-1.  Understand the rationale and structure of the CRD.
-2.  Carry out a randomization procedure and interpret why coding treatments matters.
-3.  Formulate and apply the one-way ANOVA model (including assumptions).
-4.  Explore estimability, least squares estimation, and the distribution of
-    estimators.
-5.  Use the ANOVA test to decide if treatments differ significantly.
-6.  Calculate sample size and power for planning experiments.
-7.  Demonstrate R-based procedures for randomization, modeling, and ANOVA.
-8.  Interpret the results of a CRD analysis.
-9.  Apply the CRD to real-world research scenarios.
-10. Understand the limitations and assumptions of the CRD.
-11. Additional item
-12. Additional item
-13. Additional item
-14. Additional item
+1. This is item 1
+2. This is item 2
+3. This is item 3
+4. This is item 4
+5. This is item 5
+6. This is item 6
+7. This is item 7
+8. This is item 8
+9. This is item 9
+10. This is item 10
+11. This is item 11
+12. This is item 12
+13. This is item 13
+14. This is item 14
 
 ## A Long Slide {.tiny-slide}
 
 Here is an example of a slide with a long list and a tiny attribute class `{.tiny-slide}`:
 
-1.  Understand the rationale and structure of the CRD.
-2.  Carry out a randomization procedure and interpret why coding treatments matters.
-3.  Formulate and apply the one-way ANOVA model (including assumptions).
-4.  Explore estimability, least squares estimation, and the distribution of
-    estimators.
-5.  Use the ANOVA test to decide if treatments differ significantly.
-6.  Calculate sample size and power for planning experiments.
-7.  Demonstrate R-based procedures for randomization, modeling, and ANOVA.
-8.  Interpret the results of a CRD analysis.
-9.  Apply the CRD to real-world research scenarios.
-10. Understand the limitations and assumptions of the CRD.
-11. Additional item
-12. Additional item
-13. Additional item
-14. Additional item    
+1. This is item 1
+2. This is item 2
+3. This is item 3
+4. This is item 4
+5. This is item 5
+6. This is item 6
+7. This is item 7
+8. This is item 8
+9. This is item 9
+10. This is item 10
+11. This is item 11
+12. This is item 12
+13. This is item 13
+14. This is item 14
 
 ## Callouts Examples
 

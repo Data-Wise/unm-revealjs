@@ -41,8 +41,16 @@ $font-size-medium-small: .8em !default;
 $font-size-small: 0.6em !default;
 $font-size-tiny: 0.4em !default;
 
+// --- Spacing --- 
+$spacing-small: 0.5rem;
+$spacing-medium: 1rem;
+$spacing-large: 2rem;
+$spacing-xlarge: 3rem;
+
 // --- Line Height ---
-$line-height: 1.3em;
+// Spacing Variables
+$line-height-body: 1.3rem;
+$line-height-heading: 1.2rem;
 
 // --- Heading Font Sizes ---
 $presentation-font-size-root: 29px; // Base font size for headings
@@ -60,6 +68,8 @@ $code-line-height: 1.2em !default;
 $code-font-family: "Fira Code", monospace !default;
 $code-block-font-size: .5em !default; //sass variable for code block font size
 $code-block-bg: rgb(223, 233, 237) !default; //Sass variable for code block background
+
+
 
 // ====================
 // 2. Imports
@@ -90,14 +100,16 @@ $code-block-bg: rgb(223, 233, 237) !default; //Sass variable for code block back
   // font-size: $font-size;
   color: $body-color;
   background-color: $body-bg;
-  line-height: $line-height;
-  margin-top: 0;
-  margin-bottom: 1em;
+  line-height: $line-height-body;
+  // margin-top: 0;
+  // margin-bottom: 1em;
+  margin: 0; // Reset default margin
+  padding: 0;
 }
 
 .reveal a {
   color: $accent;
-  // line-height: $line-height;
+  // line-height: $line-height-body;
 }
 
 .reveal img {
@@ -195,7 +207,7 @@ $code-block-bg: rgb(223, 233, 237) !default; //Sass variable for code block back
 
 .reveal pre {
   padding: 0;
-  margin: 0;
+  margin: $spacing-small;
   font-family: $code-font-family;
   font-size: $code-block-font-size;
   line-height: $code-line-height;
@@ -225,7 +237,7 @@ $code-block-bg: rgb(223, 233, 237) !default; //Sass variable for code block back
   margin-bottom: 0;
   font-size: $font-size-small;
   font-weight: 400;
-  line-height: $line-height;
+  line-height: $line-height-body;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
