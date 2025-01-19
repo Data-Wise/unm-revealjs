@@ -27,15 +27,8 @@ depending on how long it is.
 2. second item
    1. sub item
 
-<!-- Next, we'll brief review some theme-specific components. -->
-
-<!-- - Note that _all_ of the standard Reveal.js
-[features](https://quarto.org/docs/presentations/revealjs/)
-can be used with this theme, even if we don't highlight them here. -->
-
-
-# Regular Section Slide 
-
+# Section Slide 
+<!-- 
 # Section Slide without Text {.section-slide}
 
 
@@ -44,7 +37,7 @@ can be used with this theme, even if we don't highlight them here. -->
 This is a `{.section slide}` class with texts.
 
 - This is useful for breaking up the presentation into sections.
-
+ -->
 
 ## Additional theme classes
 
@@ -168,7 +161,7 @@ Here is an example of a slide with a long list and a tiny attribute class `{.tin
 13. This is item 13
 14. This is item 14
 
-## Callouts Examples
+## Callouts Examples {.tiny-slide}
 
 Here are some examples of callout boxes:
 
@@ -182,4 +175,17 @@ This is a tip callout box.
 
 ::: {.callout-important}
 This is an important callout box.
+:::
+
+::: {.callout-warning}
+This is a warning callout box.
+:::
+
+::: {.callout-caution}
+This is a caution callout box.
+:::
+
+::: {.callout-danger}
+## Danger
+This is a danger callout box.
 :::

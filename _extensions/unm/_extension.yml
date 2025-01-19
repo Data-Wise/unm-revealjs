@@ -6,22 +6,20 @@ contributes:
   formats:
     revealjs:
       logo: "images/unm-logo.png"
-      # title-slide-attributes:
-      #   data-background-image: "images/unm-title-slide.png"
-      #   data-background-size: "contain"
-      #   data-background-position: bottom
-      #   data-background-opacity: "0.3"
-      #   data-background-repeat: "no-repeat"
+      title-slide-attributes:
+        data-background-image: "images/unm-title-slide.png"
+        data-background-size: "520px 150px"
+        data-background-position: bottom
+        data-background-opacity: "0.8"
+        data-background-repeat: "no-repeat"
       slide-number: true
       show-slide-number: all
       scrollable: true
-      margin: 0
+      margin: 0.1
       theme:
       - simple
       - "styles/custom.scss"
     date-format: long
-    header-includes:
-    - '<img src="images/unm-logo.png" style="width: 50%; height: 200px;">'
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"

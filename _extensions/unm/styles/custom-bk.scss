@@ -2,86 +2,105 @@
 // 1. Variables
 // ====================
 
-// Define UNM Colors
-$unm-cherry: #ba0c2f;
-$unm-turquoise: #007a86;
-$unm-silver: #a7a8aa;
-$unm-lobo-gray: #63666a;
-$unm-high-noon: #ffc600;
-$unm-sandia-sunset: #ed8b00;
-$unm-terra: #c05131;
-$unm-mesa: #d6a461;
-$unm-green-chile: #a8aa19;
-$unm-deep-dusk: #8a387c;
+// --- UNM Brand Colors (only those in actual use) ---
+// $unm-cherry: #ba0c2f;
+// $unm-sandia-sunset: #ed8b00; // used in .fg
+// $unm-lobo-gray: #63666a; // used in blockquotes
+// $unm-green-chile: #a8aa19; // used in blockquotes
+// $unm-terra: #c05131; // used in h3
+// $unm-deep-dusk: #8a387c; // used for $accent, $accent2
 
-// Custom Colors and Variables
-$accent: $unm-deep-dusk;
-$accent1: $unm-turquoise;
-$accent2: $unm-deep-dusk;
-$accent3: $unm-terra;
-$body-text-color: #000000;
-$bg-color: #ffffff;
+$unm-cherry: #BA0C2F;
+$unm-turquoise: #007A86;
+$unm-silver: #A7A8AA;
+$unm-lobo-gray: #63666A;
+$unm-high-noon: #FFC600;
+$unm-sandia-sunset: #ED8B00;
+$unm-terra: #C05131;
+$unm-mesa: #D6A461;
+$unm-green-chile: #A8AA19;
+$unm-deep-dusk: #8A387C;
 
-// Font Variables
-$font-family-sans-serif: "Roboto", sans-serif !default;
-$font-family-monospace: "Fira Code", monospace !default;
-$presentation-font-size-root: 35px;
-$presentation-font-smaller: 0.7em;
-$presentation-line-height: 1.2em;
+// --- Accent Colors ---
+$accent: $unm-deep-dusk; // used for links, buttons
+$accent2: $unm-green-chile; // used in h4
 
-// Heading Font Variables
 
-$presentation-h1-font-size: 2.5em;
-$presentation-h2-font-size: 2em;
-$presentation-h3-font-size: 1.5em;
-$presentation-h4-font-size: 1.2em;
+// --- Basic Colors & Text ---
+$body-bg: #ffffff; // sass variable for body background
+$body-color: #222; // sass variable for body text color
+$link-color: $unm-turquoise; // sass variable for link color
+$link-color-hover: lighten($link-color, 15%); // sass variable for link hover color
+$selection-bg: lighten($unm-sandia-sunset, 30%); // sass variable for selection background color
+$selection-color: lighten($unm-lobo-gray, 25%)g; // sass variable for selection text color
+$light-bg-code-color: #4758ab; // sass variable for light background code color
+
+// --- Font Families ---
+$font-family-sans-serif: "Roboto", sans-serif !default; // sass variable for sans-serif font
+$font-family-monospace: "Fira Code", monospace !default; // sass variable for monospace font
+
+// User defined font families
+
+$font-family-heading-alt1: "Lato", sans-serif; // my custom font family for headings
+$font-family-heading-alt2: "Fira Sans", sans-serif; // my custom font family for headings
+
+
+// --- Quarto-Recommended Base Font Sizes User Defined---
+$font-size-large: 2.5em !default; // Base font size
+$font-size: 1em !default; // Base font size
+$font-size-medium-small: .8em !default;
+$font-size-small: 0.6em !default;
+$font-size-tiny: 0.4em !default;
+
+// --- Spacing --- 
+$spacing-small: 0.5rem;
+$spacing-medium: 1rem;
+$spacing-large: 2rem;
+$spacing-xlarge: 3rem;
+
+// --- Line Height ---
+// Spacing Variables
+$line-height-body: 1.3rem;
+$line-height-heading: 1.2rem;
+
+// --- Heading Font Sizes ---
+$presentation-font-size-root: 29px; // Base font size for headings
+$presentation-h1-font-size: 2.5em !default;
+$presentation-h2-font-size: 1.8em !default;
+$presentation-h3-font-size: 1.2em !default;
+$presentation-heading-font: Lato, sans-serif !default;
 $presentation-heading-color: $unm-cherry;
 $presentation-heading-line-height: 1.2em;
-$presentation-heading-font-weight: bold;
+$presentation-font-smaller: 0.8em; // Sass variable for smaller font size
+$presentation-line-height: 1.3em; // Sass variable for line height
 
-
-// User Font Variables
-// $presentation-heading-font: "Roboto", sans-serif !default;
-// $presentation-font: "Roboto", sans-serif !default;
-$presentation-font-chalk: "Chalkboard", sans-serif !default;
-$presentation-font-alt1: "Georgia", serif !default;
-$presentation-font-alt2: "Arial", sans-serif !default;
-
-// User Defined Font Sizes
-$font-size-root: 35px;
-$font-size-large: 46px;
-$font-size: 29px;
-$font-size-medium: 38px;
-$font-size-medium-small: 27px;
-$font-size-small: 24px;
-$font-size-tiny: 20px;
-
-// Line Heights
-$line-height-large: 2em;
-$line-height: 1.5em;
-
-// Link and Selection Colors
-$link-color: $accent !default;
-$selection-bg: #26351c !default;
-$selection-color: $unm-terra !default;
-$code-bg: rgb(223, 233, 237) !default;
-$code-color: #000000 !default;
-$code-border: 1px solid rgb(73, 71, 71) !default;
-$code-font-size: 20px !default;
+// --- Code Block Settings ---
 $code-line-height: 1.2em !default;
 $code-font-family: "Fira Code", monospace !default;
-$code-font-family-alt1: menlo, monospace !default;
+$code-block-font-size: .5em !default; //sass variable for code block font size
+$code-block-bg: rgb(223, 233, 237) !default; //Sass variable for code block background
 
-/*-- scss:defaults --*/
+
 
 // ====================
 // 2. Imports
 // ====================
 
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,350,350i,400,400i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,350,350i,400,400i&display=swap'); // Import Roboto font
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap'); // Import 'Fira Code' font
+// @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap'); // Import 'Roboto Slab' font
 
-/*-- scss:rules --*/
+/* import Lato font */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap'); // Import Lato font
+// /* import Open Sans font */
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap'); // Import Open Sans font
+// /* import Tangerine font */
+// @import url('https://fonts.googleapis.com/css?family=Tangerine&display=swap'); // Import Tangerine font 
+// /* import Fira Sans font */
+// @import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap'); // Import Fira Sans font
+
+
+
 
 // ====================
 // 3. Base Styles
@@ -89,17 +108,19 @@ $code-font-family-alt1: menlo, monospace !default;
 
 .reveal {
   font-family: $font-family-sans-serif;
-  font-size: $font-size;
-  color: $body-text-color;
-  background-color: $bg-color;
-  line-height: $line-height;
-  margin-top: 0%;
-  margin-bottom: 2rem;
+  // font-size: $font-size;
+  color: $body-color;
+  background-color: $body-bg;
+  line-height: $line-height-body;
+  // margin-top: 0;
+  // margin-bottom: 1em;
+  margin: 0; // Reset default margin
+  padding: 0;
 }
 
 .reveal a {
-  color: $link-color;
-  line-height: $line-height;
+  color: $accent;
+  // line-height: $line-height-body;
 }
 
 .reveal img {
@@ -108,33 +129,77 @@ $code-font-family-alt1: menlo, monospace !default;
   border-radius: 8px;
 }
 
+
+#title-slide {
+
+  .title,
+  .subtitle {
+    opacity: 0.80;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    color: $unm-cherry !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; //"Tangerine";
+    // text-shadow: 2px 2px 2px #b22222;
+  }
+
+  .title {
+    font-size: $font-size-large;
+  }
+
+  .subtitle {
+    font-size: $presentation-h2-font-size;
+  }
+
+  .institute,
+  .quarto-title-author,
+  .date {
+    // opacity: 0.50;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 1em;
+    // color: #EEB422 !important;
+  }
+
+}
+
+
 // ====================
 // 4. Component Styles
 // ====================
 
-// Headers
+// Headings
 .reveal h1 {
-  color: $unm-cherry;
-  font-weight: bold;
+  color: $unm-green-chile;
+  font-weight: bolder;
   font-size: $presentation-h1-font-size;
-  margin-bottom: 3rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   text-align: center;
+  padding-top: 10%;
+  padding-bottom: 8rem;
 }
 
 .reveal h2 {
+  color: $unm-cherry !important; // Ensure color displays properly
   font-weight: bolder;
   font-size: $presentation-h2-font-size;
-  margin: 1.9rem 0 4rem 0;
-  color: $unm-cherry;
+  margin: rem 0 1em 0;
   text-align: center;
+  padding-top: .8em;
+  padding-bottom: .8em;
 }
 
 .reveal h3 {
+  color: $unm-lobo-gray;
   font-weight: normal;
   font-size: $presentation-h3-font-size;
-  margin: 1.5rem 0 2.5rem 0;
+  // margin: 1rem 0 1rem 0;
   padding-left: 1em;
-  color: $unm-terra;
 }
 
 .reveal h4 {
@@ -143,34 +208,22 @@ $code-font-family-alt1: menlo, monospace !default;
   margin-top: 0;
 }
 
-// Adjust the font size of code blocks globally
+// Code Blocks
 .reveal pre code {
   padding: 1em;
-  /* Adjust padding around code blocks */
   margin: 0;
-  /* Adjust margin above and below code blocks */
-  font-size: $font-size-small;
-  /* Increase or decrease as needed */
+  font-size: $font-size-medium-small;
   line-height: 1.3em;
-  /* Adjust line height for better readability */
 }
 
-// Code Blocks
 .reveal pre {
   padding: 0;
-  /* Adjust padding around code blocks */
-  margin: 0;
-  /* Adjust margin above and below code blocks */
+  margin: $spacing-small;
   font-family: $code-font-family;
-  font-size: $font-size-tiny;
+  font-size: $code-block-font-size;
   line-height: $code-line-height;
-  background-color: $code-bg;
+  background-color: $code-block-bg;
 }
-
-// .reveal code {
-//   font-family: $code-font-family;
-//   font-size: $code-font-size;
-// }
 
 // Alerts
 .alert {
@@ -182,21 +235,20 @@ $code-font-family-alt1: menlo, monospace !default;
 }
 
 .bg {
-  background-color: var(--col, $bg-color);
+  background-color: var(--col, $body-bg);
   padding: 0;
   border-radius: 5px;
   display: inline-block;
 }
 
-// Beamer-style button link environment
-
+// Button
 .button {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: $font-size-small;
   font-weight: 400;
-  line-height: $line-height;
+  line-height: $line-height-body;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -220,11 +272,12 @@ $code-font-family-alt1: menlo, monospace !default;
 }
 
 // Lists
+li,
 ul,
 ol {
   padding-left: 0.5em;
-  margin-bottom: 1em;
-  color: $body-text-color;
+  // margin-bottom: 1em;
+  // color: $body-color;
 }
 
 ul {
@@ -233,13 +286,10 @@ ul {
 
 ol {
   list-style-type: decimal;
-  // font-size: 1.2em;
 }
 
 li {
-  list-style-type: square;
-  // margin-bottom: 1em;
-  // font-size: 1em;
+  list-style-type: symbols(cyclic, "❯");
 }
 
 // Tables
@@ -256,7 +306,7 @@ table {
 
 th {
   background-color: rgba(0, 0, 0, 0.1);
-  color: $body-text-color;
+  color: $body-color;
   font-weight: bold;
   padding: 0.5em;
 }
@@ -264,147 +314,24 @@ th {
 td {
   padding: 0.5em;
   text-align: left;
-  /* Adjust text alignment as needed */
   font-weight: lighter;
-  /* Lighter font weight for main table text */
 }
 
 // ====================
 // 5. Slide Type Styles
 // ====================
 
-// Title Slide Styles
-.title-slide {
-  display: flex;
-  flex-direction: column; // stack title, subtitle, author vertically
-  justify-content: center; // center vertically
-  align-items: left; // center horizontally
-  min-height: 100vh; // take the full viewport height
-
-  text-align: center;
-  margin: 2em 0;
-  padding-bottom: 5%;
-
-  .title {
-    color: $unm-cherry;
-    font-family: $presentation-heading-font;
-    font-size: 2em;
-    font-weight: bolder;
-    margin: 1em 0 0.5em 0;
-    margin-top: 2em; // remove extra top margin
-    margin-bottom: 0.5em; // adjust space below title
-  }
-
-  .subtitle {
-    color: $unm-cherry;
-    font-size: 1.4em;
-    font-style: italic;
-    font-weight: bolder;
-    margin: 0;
-    margin-bottom: 1em; // put some spacing before authors
-  }
-
-  .institute,
-  .quarto-title-affiliation,
-  .quarto-title-author-email {
-    font-style: normal;
-    font-size: $font-size-tiny;
-    color: $accent;
-  }
-
-  .author,
-  .quarto-title-author-name {
-    font-size: $font-size-small;
-    color: $accent;
-  }
-
-  .quarto-title-authors {
-    display: flex;
-    justify-content: center;
-    margin-top: 1em; // spacing above authors
-
-    .quarto-title-author {
-      padding: 0 1em;
-      width: 100%;
-      justify-content: center;
-    }
-  }
-}
-
-
-// /* Style 1: Section Slide Without Body Text and Lists */
-// .section-slide {
-//   /* Center the content */
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100%;
-
-//   /* Remove any existing padding or margin */
-//   padding: 0;
-//   margin: 0;
-
-//   /* Style the heading */
-//   h2 {
-//     font-family: $presentation-heading-font;
-//     font-size: 2em;
-//     /* Adjust as needed */
-//     color: $unm-cherry;
-//     text-align: center;
-//   }
-
-//   /* Hide all other elements */
-//   p,
-//   ul,
-//   ol,
-//   li,
-//   h3,
-//   h4,
-//   blockquote,
-//   pre,
-//   code,
-//   img {
-//     display: none;
-//   }
-// }
-
-// Code Slide Styles
-.code-slide {
-  // background-color: $bg-color;
-  margin: 0;
-  padding: 0;
-  background-color: $bg-color;
-  font-size: $code-font-size;
-  line-height: $code-line-height;
-
-  h2 {
-    font-size: $presentation-h2-font-size;
-    background-color: $bg-color;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-}
-
-// Smaller Slide Styles
+// Smaller Slide
 .small-slide {
-  font-size: $font-size-medium-small;
-  // line-height: $line-height;
-
-  h2 {
-    font-size: 1.9em;
-    font-weight: bolder;
-    margin: 1rem 0 2.5rem 0;
-  }
+  font-size: $presentation-font-smaller;
 }
 
-// Small Slide Styles
+// Tiny Slide
 .tiny-slide {
-  background-color: $bg-color;
   font-size: $font-size-small;
-  // line-height: $line-height;
 }
 
-// Quote Slide Styles
+// Quote Slide
 .quote-slide {
   color: $unm-cherry;
   font-size: $font-size-small;
@@ -418,17 +345,32 @@ td {
   }
 }
 
-// Image Slide Styles
+// Image Slide
 .image-slide {
   margin: 0;
   padding: 0;
-  background-color: $bg-color;
+  background-color: $body-bg;
   font-size: $font-size-tiny;
 
   h2 {
     font-size: 1em;
     color: $accent;
-    background-color: $bg-color;
+    background-color: $body-bg;
+  }
+}
+
+// Section Slide
+
+.section-slide {
+  // background-color: $body-bg;
+  font-size: $presentation-h2-font-size;
+  // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  p,
+  li,
+  ul,
+  ol {
+    padding-left: 0.5em;
   }
 }
 
@@ -443,15 +385,169 @@ td {
   width: 100%;
   text-align: center;
   font-size: 1.2em;
-  // padding: 10px 0;
-  // z-index: 1000;
   pointer-events: none;
+  padding: $spacing-medium 0;
 }
 
 // Prevent slide content from overlapping the footer
 .reveal .slides section {
   padding-bottom: 50px;
-  /* Adjust based on footer height */
+}
+
+// ====================
+// 8. Call-Out Styles
+// ====================
+
+/* Info Call-Out */
+.callout-note {
+  // background-color: rgba($unm-turquoise, 0.1);
+  border-left: 5px solid $unm-turquoise;
+  padding: $spacing-small 0;
+  margin: $spacing-medium 0;
+  border-radius: 4px;
+
+  h2 {
+    color: $unm-turquoise;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    // color: $unm-lobo-gray;
+    font-size: $font-size;
+  }
+}
+
+/* Warning Call-Out */
+.callout-warning {
+  // background-color: rgba($unm-terra, 0.1);
+  border-left: 5px solid $unm-terra;
+  padding: $spacing-small 0;
+  margin: $spacing-medium 0;
+  border-radius: 4px;
+
+  h2 {
+    color: $unm-terra;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    // color: $unm-lobo-gray;
+    font-size: $font-size;
+  }
+}
+
+/* Tip Call-Out */
+.callout-tip {
+  // background-color: rgba($unm-high-noon, 0.1);
+  border-left: 5px solid $unm-high-noon;
+  padding: $spacing-small 0;
+  margin: $spacing-medium 0;
+  border-radius: 4px;
+
+  h2 {
+    color: $unm-high-noon;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    // color: $unm-lobo-gray;
+    font-size: $font-size;
+  }
+}
+
+/* Success Call-Out */
+.callout-success {
+  // background-color: rgba($unm-green-chile, 0.1);
+  border-left: 5px solid $unm-green-chile;
+  padding: $spacing-small 0;
+  margin: $spacing-medium 0;
+  border-radius: 4px;
+
+  h2 {
+    color: $unm-green-chile;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    // color: $unm-lobo-gray;
+    font-size: $font-size;
+  }
+}
+
+/* Danger Call-Out */
+.callout-danger {
+  // background-color: rgba($unm-cherry, 0.1);
+  border-left: 5px solid $unm-cherry;
+  padding: $spacing-small 0;
+  margin: $spacing-medium 0;
+  border-radius: 4px;
+
+  h2 {
+    color: $unm-cherry;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    // color: $unm-lobo-gray;
+    font-size: $font-size;
+  }
+}
+
+/* Call-Out Icons using Pseudo-Elements */
+.callout-info h2::before {
+  content: "\f05a";
+  /* Font Awesome Info Icon Unicode */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 0.5rem;
+  color: $unm-turquoise;
+}
+
+.callout-warning h2::before {
+  content: "\f071";
+  /* Font Awesome Warning Icon Unicode */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 0.5rem;
+  color: $unm-terra;
+}
+
+.callout-tip h2::before {
+  content: "\f0eb";
+  /* Font Awesome Lightbulb Icon Unicode */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 0.5rem;
+  color: $unm-high-noon;
+}
+
+.callout-success h2::before {
+  content: "\f058";
+  /* Font Awesome Check Circle Icon Unicode */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 0.5rem;
+  color: $unm-green-chile;
+}
+
+.callout-danger h2::before {
+  content: "\f057";
+  /* Font Awesome Times Circle Icon Unicode */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 0.5rem;
+  color: $unm-cherry;
 }
 
 /*-- scss:mixins --*/
+// ====================
