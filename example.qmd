@@ -29,16 +29,6 @@ depending on how long it is.
    1. sub item
 
 # Section Slide 
-<!-- 
-# Section Slide without Text {.section-slide}
-
-
-# Section Slide with Text {.section-slidet}
-
-This is a `{.section slide}` class with texts.
-
-- This is useful for breaking up the presentation into sections.
- -->
 
 ## Additional theme classes {.small-slide}
 

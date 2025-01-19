@@ -83,7 +83,7 @@ $code-block-bg: rgb(223, 233, 237) !default; // Code block background
 // ====================
 
 html {
-  font-size: $presentation-font-size-root; // 30px
+  font-size: $presentation-font-size-root;
 }
 
 body {
@@ -405,6 +405,12 @@ td {
     color: $unm-turquoise;
     font-weight: bold;
   }
+
+  // /* Hide footnotes within the title slide */
+  // .footer {
+  //   display: none;
+  // }
+
 }
 
 /*-- scss:mixins --*/
