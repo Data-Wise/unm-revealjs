@@ -4,11 +4,12 @@ subtitle: "A Presentation Template"
 format: 
   unm-revealjs:
     slide-number: true
+    transition: fade
 author:
   - name: Your Name
     orcid: 0000-0000-0000-0000
     email: user-id@unm.edu
-    # affiliations: The University of New Mexico
+    affiliations: The University of New Mexico
 date: last-modified
 ---
 
@@ -65,6 +66,30 @@ Exploring emerging technologies and innovations in renewable energy.
 x <- rnorm(10)
 print(x)
 ```
+
+## Slide With No Text {.section-slide}
+
+This text is hidden because .section-slide rules hide slide content except the heading.
+
+## Slide With Text {.section-slide-text}
+
+Use .section-slide-text if you want a heading plus visible text or lists.
+
+# Sample Tables
+
+::: {.regular-table}
+| City | Population |
+|------|-----------:|
+| A    |       1000 |
+| B    |       2000 |
+:::
+
+::: {.long-table}
+| Column1 | Column2 | Column3 |
+|---------|---------|---------|
+| Data    | Data    | Data    |
+| Data    | Data    | Data    |
+:::
 
 # Thank You!
 

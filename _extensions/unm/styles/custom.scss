@@ -272,58 +272,18 @@ td {
   }
 }
 
-/* Target slides with the 'large-image-slide' class */
-.large-image-slide {
-  /* Remove default padding and margins */
-  padding: 0 !important;
-  margin: 0 !important;
-  
-  /* Center content horizontally and vertically */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-  /* Optional: Set a specific background color */
-  background-color: #ffffff; /* Adjust as needed */
-  
-  /* Optional: Adjust overall slide height if necessary */
-  height: 100vh; /* Ensures the slide takes full viewport height */
-}
+// Image Slide
+.image-slide {
+  margin: 0;
+  padding: 0;
+  background-color: $body-bg;
+  font-size: $font-size-tiny;
 
-/* Style for images within large image slides */
-.large-image-slide img {
-  max-width: 100%;
-  max-height: 90vh; /* Ensure image doesn't exceed viewport height */
-  width: auto;
-  height: auto;
-  
-  /* Optional: Add border or shadow */
-  /* border: 2px solid #cccccc;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-}
-
-/* ====================
-   10. Heading Styles for Large Image Slides
-   ==================== */
-
-/* Style for h2 elements within large image slides */
-.large-image-slide h2 {
-  font-size: $presentation-h2-font-size;          /* Reduced font size */
-  padding: 0.3rem 0;          /* Smaller padding: top/bottom 0.3rem, left/right 0 */
-  margin: 0.5rem 0;           /* Reduced margin: top/bottom 0.5rem, left/right 0 */
-  text-align: center;         /* Center the heading text */
-  color: $unm-cherry;           /* Darker text color for better readability */
-  font-weight: 500;           /* Slightly lighter font weight */
-}
-
-/* Optional: Style for figure captions within large image slides */
-.large-image-slide figcaption,
-.large-image-slide .figure-caption {
-  font-size: 0.75rem;         /* Smaller font size */
-  color: #666666;             /* Subtle color */
-  margin-top: 0.3rem;         /* Smaller top margin */
-  text-align: center;         /* Center the caption text */
+  h2 {
+    font-size: 1em;
+    color: $accent;
+    background-color: $body-bg;
+  }
 }
 
 // ====================
@@ -452,6 +412,7 @@ td {
   // }
 
 }
+
 
 /* ====================
    8. Logo Positioning Styles
