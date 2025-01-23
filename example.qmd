@@ -182,3 +182,61 @@ This is a warning callout box.
 ::: {.callout-caution}
 This is a caution callout box.
 :::
+
+
+## Flowchart of Experimental Design Steps {.tiny-slide}
+
+```{dot}
+//| label: fig-doe-plan-flowchart
+//| fig-cap: "Experimental Design Planning Flowchart"
+//| echo: false
+
+digraph ExperimentalDesign {
+    rankdir=TB;
+    node [shape=box, style=filled, fontname="Arial"];
+
+    // Color-coded groups
+    subgraph cluster_planning {
+        label = "Planning";
+        color = lightblue;
+        "Define Objectives" [fillcolor=lightblue];
+        "Identify Sources of Variation" [fillcolor=lightblue];
+        "Choose Assignment Rules" [fillcolor=lightblue];
+    }
+
+    subgraph cluster_implementation {
+        label = "Implementation";
+        color = lightgreen;
+        "Specify Measurements & Procedure" [fillcolor=lightgreen];
+        "Identify Anticipated Difficulties" [fillcolor=lightgreen];
+        "Run Pilot Experiment" [fillcolor=lightgreen];
+    }
+
+    subgraph cluster_analysis {
+        label = "Analysis";
+        color = orange;
+        "Specify Statistical Model" [fillcolor=orange];
+        "Outline Analysis" [fillcolor=orange];
+        "Calculate Sample Size" [fillcolor=orange];
+    }
+
+    subgraph cluster_iteration {
+        label = "Iteration";
+        color = lightcoral;
+        "Review and Revise" [fillcolor=lightcoral];
+    }
+
+    // Connections
+    "Define Objectives" -> "Identify Sources of Variation";
+    "Identify Sources of Variation" -> "Choose Assignment Rules";
+    "Choose Assignment Rules" -> "Specify Measurements & Procedure";
+    "Specify Measurements & Procedure" -> "Identify Anticipated Difficulties";
+    "Identify Anticipated Difficulties" -> "Run Pilot Experiment";
+    "Run Pilot Experiment" -> "Specify Statistical Model";
+    "Specify Statistical Model" -> "Outline Analysis";
+    "Outline Analysis" -> "Calculate Sample Size";
+    "Calculate Sample Size" -> "Review and Revise";
+    "Review and Revise" -> "Define Objectives" [color=red, style=dashed];
+    "Review and Revise" -> "Identify Sources of Variation" [color=red, style=dashed];
+}
+```

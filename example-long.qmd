@@ -189,23 +189,59 @@ $\bar{Y}_i = \frac{1}{n}\sum_{j=1}^n Y_{ij}$.
 | Total     | $N - 1$ | $SS_{Total}$     |                 |         |
 
 
-## R Code for Power
+## Flowchart of Experimental Design Steps {.large-image-slide}
 
-```{r}
-#| label: r-power
-pwr::pwr.anova.test(k = 3, f = 0.3, sig.level = 0.05, power = 0.8)
+```{dot}
+//| label: fig-doe-plan-flowchart
+//| fig-cap: "Experimental Design Planning Flowchart"
+//| echo: false
+
+digraph ExperimentalDesign {
+    rankdir=TB;
+    node [shape=box, style=filled, fontname="Arial"];
+
+    // Color-coded groups
+    subgraph cluster_planning {
+        label = "Planning";
+        color = lightblue;
+        "Define Objectives" [fillcolor=lightblue];
+        "Identify Sources of Variation" [fillcolor=lightblue];
+        "Choose Assignment Rules" [fillcolor=lightblue];
+    }
+
+    subgraph cluster_implementation {
+        label = "Implementation";
+        color = lightgreen;
+        "Specify Measurements & Procedure" [fillcolor=lightgreen];
+        "Identify Anticipated Difficulties" [fillcolor=lightgreen];
+        "Run Pilot Experiment" [fillcolor=lightgreen];
+    }
+
+    subgraph cluster_analysis {
+        label = "Analysis";
+        color = orange;
+        "Specify Statistical Model" [fillcolor=orange];
+        "Outline Analysis" [fillcolor=orange];
+        "Calculate Sample Size" [fillcolor=orange];
+    }
+
+    subgraph cluster_iteration {
+        label = "Iteration";
+        color = lightcoral;
+        "Review and Revise" [fillcolor=lightcoral];
+    }
+
+    // Connections
+    "Define Objectives" -> "Identify Sources of Variation";
+    "Identify Sources of Variation" -> "Choose Assignment Rules";
+    "Choose Assignment Rules" -> "Specify Measurements & Procedure";
+    "Specify Measurements & Procedure" -> "Identify Anticipated Difficulties";
+    "Identify Anticipated Difficulties" -> "Run Pilot Experiment";
+    "Run Pilot Experiment" -> "Specify Statistical Model";
+    "Specify Statistical Model" -> "Outline Analysis";
+    "Outline Analysis" -> "Calculate Sample Size";
+    "Calculate Sample Size" -> "Review and Revise";
+    "Review and Revise" -> "Define Objectives" [color=red, style=dashed];
+    "Review and Revise" -> "Identify Sources of Variation" [color=red, style=dashed];
+}
 ```
-
-Adjust parameters for effect size, alpha, and power.
-
-## Additional Resources
-
-1.  Dean, A., Voss, D., & Draguljić, D. (2017). *Design and Analysis of Experiments*.
-    Springer.\
-2.  Montgomery, D. C., & Runger, G. C. (2010). *Applied Statistics and Probability
-    for Engineers*. Wiley.\
-3.  Christensen, R. (2018). *Analysis of Variance, Design, and Regression*. Chapman
-    and Hall/CRC.\
-4.  Libre Textbook: [Analysis of Variance and Design of Experiments]
-
-  [Analysis of Variance and Design of Experiments]: https://stats.libretexts.org/Bookshelves/Advanced_Statistics/Analysis_of_Variance_and_Design_of_Experiments
