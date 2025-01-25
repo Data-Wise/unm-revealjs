@@ -155,33 +155,15 @@ h4 {
   margin-top: 0;
 }
 
-// // Code Blocks
-// pre {
-//   // padding: $spacing-xs; // 0.5rem
-//   margin: $spacing-xs 0; // 0.5rem top and bottom
-//   background-color: $code-block-bg;
-//   border-radius: 5px;
-//   font-family: $code-font-family;
-//   font-size: $code-block-font-size; // 0.5rem
-//   line-height: $code-line-height; // 1.2
-// }
-
-// pre code {
-//   padding: $spacing-sm; // 0.75rem
-//   margin: 0;
-//   // font-size: $font-size-medium-small; // 0.8rem
-//   // line-height: $code-line-height; // 1.2
-// }
-
 // Code Blocks - General Styling
 pre {
-  margin: 0.5rem 0; /* Space above and below the code block */
+  margin: $spacing-sm 0; /* Space above and below the code block */
   background-color: $code-block-bg; /* Background color for the code container */
-  border-radius: 4px; /* Rounded corners */
+  border-radius: 5px; /* Rounded corners */
   font-family: $code-font-family; /* Monospaced font for alignment */
   font-size: $code-block-font-size; /* Consistent font size */
   line-height: $code-line-height; /* Line height for readability */
-  overflow: hidden; /* Prevent any overflow from the container */
+  overflow: auto; /* Enable horizontal scrolling for long lines */
 }
 
 /* Nested Code Styling */
@@ -189,10 +171,10 @@ pre code {
   background-color: #f5f5f5; /* Light gray background for code content */
   border: 1px solid #ddd; /* Subtle border for better contrast */
   border-radius: 5px; /* Slightly rounded corners for the code block */
-  padding: 0.75rem; /* Padding inside the code block for comfortable spacing */
+  padding: $spacing-sm; /* Padding inside the code block for comfortable spacing */
   font-family: $code-font-family; /* Ensure consistent font family with <pre> */
-  font-size: 0.9rem; /* Slightly smaller font size for compact code */
-  line-height: 1.4; /* Improved line spacing for better readability */
+  font-size: $code-block-font-size; /* Slightly smaller font size for compact code */
+  // line-height: $code-line-height; /* Improved line spacing for better readability */
   overflow-x: auto; /* Enable horizontal scrolling for long lines */
   white-space: pre-wrap; /* Allow line wrapping while preserving spaces */
   color: #333; /* Default text color for code */
@@ -280,6 +262,7 @@ li {
   border-collapse: collapse; /* Remove default table spacing */
   font-family: $font-family-sans-serif; /* Consistent font family for tables */
   font-size: $font-size-small; /* Slightly smaller font size for readability */
+  padding: $spacing-md; /* Padding for consistent spacing */
 
   /* Row striping for alternating colors */
   tr:nth-child(even) {
@@ -291,7 +274,7 @@ li {
     text-align: left;
     background-color: $unm-silver; /* Consistent UNM silver for header */
     color: #333; /* Darker header text for contrast */
-    padding: 0.75rem; /* Padding for consistent spacing */
+    padding: $spacing-xs; /* Padding for consistent spacing */
     border-bottom: 2px solid $unm-lobo-gray; /* Thicker border for header separation */
     font-weight: bold; /* Emphasize table headers */
     text-transform: uppercase; /* Make headers stand out */
@@ -299,7 +282,7 @@ li {
 
   /* Table Cells */
   td {
-    padding: 0.65rem; /* Adjusted for comfortable spacing */
+    padding: $spacing-xs; /* Adjusted for comfortable spacing */
     border-bottom: 1px solid $unm-silver; /* Subtle row dividers */
     color: #444; /* Dark gray for cell text */
     vertical-align: middle; /* Align text vertically in the middle */
@@ -307,7 +290,7 @@ li {
 
   /* Table Hover Effect */
   tr:hover {
-    background-color: lighten($unm-sandia-sunset, 60%); /* Highlight row on hover */
+    background-color: lighten($unm-sandia-sunset, 20%); /* Highlight row on hover */
     transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
   }
 }
