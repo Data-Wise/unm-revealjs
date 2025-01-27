@@ -13,29 +13,25 @@ author:
 date: last-modified
 ---
 
-# Introduction (Section with Text)  {.section-slide-text}
+# Introduction (Section with Text) 
 
 Welcome to the presentation on advancements in renewable energy.
-
-# Agenda (Section with Text) {.section-slide-text}
-
-1. Introduction
-2. Current Technologies
-3. Future Prospects
-4. Case Studies
-5. Conclusion
 
 # Current Technologies (Section without Text)
 
 ## Solar Power
 
 - Photovoltaic cells
+  - Monocrystalline
 - Solar thermal systems
+  - Concentrated solar power
 
 ## Wind Energy
 
-- Onshore wind farms
-- Offshore wind turbines
+1. Onshore wind farms
+   1. Horizontal-axis turbines
+2. Offshore wind turbines
+    1. Floating wind turbines
 
 ## Future Prospects
 
@@ -52,28 +48,31 @@ Exploring emerging technologies and innovations in renewable energy.
 - Solar panel installations on campus buildings
 - Wind energy research initiatives
 
+## Example Code Block
 
-## Conclusion {.section-slide-text}
+```{r}
+#| echo: true
 
-- Renewable energy is pivotal for sustainable development.
-- Continued research and investment are essential.
-
+set.seed(123)
+## create a data frame
+n <- 10
+df <- data.frame(x = rnorm(n), y = rnorm(n))
+print(df)
+```
 
 ## Example Code Block
 
 ```{r}
 #| echo: true
-x <- rnorm(10)
-print(x)
+
+set.seed(123)
+## create a data frame
+n <- 10
+df <- data.frame(x = rnorm(n), y = rnorm(n))
+df |> knitr::kable()
 ```
 
-## Slide With No Text {.section-slide}
 
-This text is hidden because .section-slide rules hide slide content except the heading.
-
-## Slide With Text {.section-slide-text}
-
-Use .section-slide-text if you want a heading plus visible text or lists.
 
 # Sample Tables
 
@@ -84,12 +83,6 @@ Use .section-slide-text if you want a heading plus visible text or lists.
 | B    |       2000 |
 :::
 
-::: {.long-table}
-| Column1 | Column2 | Column3 |
-|---------|---------|---------|
-| Data    | Data    | Data    |
-| Data    | Data    | Data    |
-:::
 
 # Thank You!
 
