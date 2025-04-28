@@ -89,7 +89,7 @@ experimental_units <- 1:N ## 10 experimental units
 treatments <- c("A", "B", "C") ## 3 treatments, Step 2
 
 # Repeat treatments to match the number of units. The code covers both balanced and unbalanced designs.
-treatments <- rep(treatments, length.out = N)  ## Step 3
+treatments <- rep(treatments, length.out = N) ## Step 3
 
 # For a balanced design, we can also use:
 # treatments <- rep(treatments, each = N/length(treatments))
@@ -99,7 +99,7 @@ set.seed(123) ## For reproducibility
 randomized_treatments <- sample(treatments)
 
 # Create a data frame with randomized assignments
-randomization_crd <- data.frame(Unit = experimental_units, Treatment = randomized_treatments)  ## Step 5
+randomization_crd <- data.frame(Unit = experimental_units, Treatment = randomized_treatments) ## Step 5
 print(randomization_crd)
 ```
 

@@ -572,5 +572,74 @@ pre code {
   /* Ensure it appears above other elements */
 }
 
+
+/* ===========================
+   Fully Automatic Callout Titles
+=========================== */
+
+/* ===========================
+   Modern Callouts with Colored Shadows
+=========================== */
+
+/* Shared Callout Base Style */
+.callout-example,
+.callout-question,
+.callout-insight {
+  padding: $spacing-md;
+  margin: $spacing-lg 0;
+  border-left: 6px solid;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: none;
+  /* No default gray shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* Title Bar Emulation */
+.callout-example::before,
+.callout-question::before,
+.callout-insight::before {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: $spacing-sm;
+}
+
+/* Specific Titles + Color Codes */
+.callout-example::before {
+  content: "📚 Example";
+  color: $unm-green-chile;
+}
+
+.callout-question::before {
+  content: "❓ Question";
+  color: $unm-sandia-sunset;
+}
+
+.callout-insight::before {
+  content: "💡 Insight";
+  color: $unm-turquoise;
+}
+
+/* Hover Effects with Proper Colored Shadows */
+.callout-example:hover {
+  background-color: lighten($unm-green-chile, 43%);
+  box-shadow: 0 8px 20px rgba(168, 170, 25, 0.4);
+  /* Green Chile */
+}
+
+.callout-question:hover {
+  background-color: lighten($unm-sandia-sunset, 43%);
+  box-shadow: 0 8px 20px rgba(237, 139, 0, 0.4);
+  /* Sandia Sunset */
+}
+
+.callout-insight:hover {
+  background-color: lighten($unm-turquoise, 43%);
+  box-shadow: 0 8px 20px rgba(0, 122, 134, 0.4);
+  /* Turquoise */
+}
 /*-- scss:mixins --*/
 // ====================

@@ -202,3 +202,17 @@ df <- data.frame(
 df |> knitr::kable()
 
 ```
+
+## Custom Call-out
+
+::: {.callout-example}
+Here’s a worked example illustrating a random intercept model.
+:::
+
+::: {.callout-question}
+What changes if random slopes are included in the model?
+:::
+
+::: {.callout-insight}
+This is an insight block using custom CSS.
+:::

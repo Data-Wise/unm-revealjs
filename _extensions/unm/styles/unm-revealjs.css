@@ -411,4 +411,42 @@
     font-size: 0.7rem;
 }
 
+/* Custom Callouts Theme */
+
+/* Example Callout */
+.callout-example {
+    border-left: 4px solid #4CAF50;
+    background-color: #f6fff6;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.callout-example:hover {
+    background-color: #e8f5e9;
+    border-left-color: #388E3C;
+}
+
+/* Question Callout */
+.callout-question {
+    border-left: 4px solid #FF9800;
+    background-color: #fff8e1;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.callout-question:hover {
+    background-color: #ffe0b2;
+    border-left-color: #F57C00;
+}
+
+/* Insight Callout */
+.callout-insight {
+    border-left: 4px solid #2196F3;
+    background-color: #e3f2fd;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.callout-insight:hover {
+    background-color: #bbdefb;
+    border-left-color: #1976D2;
+}
+
 /*# sourceMappingURL=slides.css.map */
