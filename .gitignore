@@ -4,4 +4,11 @@
 _quarto_internal_scss_error.scss
 .gitattributes
 /example_*/
-.Rproj.user
+# Ignore RStudio project files
+*.Rproj
+.Rproj.user/
+
+# Ignore VSCode workspace settings
+*.code-workspace
+# Ignore system files
+.DS_Store
